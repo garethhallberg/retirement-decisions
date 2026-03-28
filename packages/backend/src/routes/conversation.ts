@@ -2,11 +2,12 @@ import { Router } from 'express'
 import { v4 as uuidv4 } from 'uuid'
 import { getDb } from '../db/connection.js'
 import { getConversationResponse } from '../services/claude.js'
+import { validateSession } from '../middleware/validateSession.js'
 
 export const conversationRouter = Router()
 
 // Send a message and get AI response
-conversationRouter.post('/:sessionId/conversation', async (req, res, next) => {
+conversationRouter.post('/:sessionId/conversation', validateSession, async (req, res, next) => {
   try {
     const db = getDb()
     const { sessionId } = req.params
@@ -66,7 +67,7 @@ conversationRouter.post('/:sessionId/conversation', async (req, res, next) => {
 })
 
 // Get full conversation thread
-conversationRouter.get('/:sessionId/conversation', (req, res) => {
+conversationRouter.get('/:sessionId/conversation', validateSession, (req, res) => {
   const db = getDb()
   const { sessionId } = req.params
 

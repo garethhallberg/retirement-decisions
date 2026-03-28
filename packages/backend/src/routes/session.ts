@@ -1,6 +1,7 @@
 import { Router } from 'express'
 import { v4 as uuidv4 } from 'uuid'
 import { getDb } from '../db/connection.js'
+import { validateSession } from '../middleware/validateSession.js'
 
 export const sessionRouter = Router()
 
@@ -13,15 +14,9 @@ sessionRouter.post('/', (_req, res) => {
 })
 
 // Get full session state
-sessionRouter.get('/:sessionId', (req, res) => {
+sessionRouter.get('/:sessionId', validateSession, (req, res) => {
   const db = getDb()
   const { sessionId } = req.params
-
-  const session = db.prepare('SELECT * FROM sessions WHERE id = ?').get(sessionId)
-  if (!session) {
-    res.status(404).json({ message: 'Session not found' })
-    return
-  }
 
   const opening = db.prepare('SELECT * FROM opening_responses WHERE session_id = ?').get(sessionId)
   const messages = db.prepare('SELECT * FROM conversation_messages WHERE session_id = ? ORDER BY sequence_order').all(sessionId)
@@ -42,7 +37,7 @@ sessionRouter.get('/:sessionId', (req, res) => {
 })
 
 // Save opening response
-sessionRouter.post('/:sessionId/opening', (req, res) => {
+sessionRouter.post('/:sessionId/opening', validateSession, (req, res) => {
   const db = getDb()
   const { sessionId } = req.params
   const { greatDayResponse } = req.body
@@ -60,7 +55,7 @@ sessionRouter.post('/:sessionId/opening', (req, res) => {
 })
 
 // Save health selection
-sessionRouter.post('/:sessionId/health', (req, res) => {
+sessionRouter.post('/:sessionId/health', validateSession, (req, res) => {
   const db = getDb()
   const { sessionId } = req.params
   const { activityLevel } = req.body
@@ -80,7 +75,7 @@ sessionRouter.post('/:sessionId/health', (req, res) => {
 })
 
 // Save financial data
-sessionRouter.post('/:sessionId/financial', (req, res) => {
+sessionRouter.post('/:sessionId/financial', validateSession, (req, res) => {
   const db = getDb()
   const { sessionId } = req.params
   const { totalAssets, annualPension, targetRetirementAge, targetRetirementYear, fixedAnnualSpend, discretionaryAnnualSpend } = req.body

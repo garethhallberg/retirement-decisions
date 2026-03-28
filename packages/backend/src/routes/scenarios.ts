@@ -3,31 +3,44 @@ import { v4 as uuidv4 } from 'uuid'
 import { getDb } from '../db/connection.js'
 import { generateThreeScenarios, recalculateSingleScenario } from '../services/scenarioEngine.js'
 import { generateScenarioNarratives } from '../services/claude.js'
+import { validateSession } from '../middleware/validateSession.js'
 
 export const scenarioRouter = Router()
 
 // Generate scenarios (SSE for progress)
-scenarioRouter.post('/:sessionId/scenarios/generate', async (req, res, next) => {
-  try {
-    const db = getDb()
-    const { sessionId } = req.params
+scenarioRouter.post('/:sessionId/scenarios/generate', validateSession, async (req, res) => {
+  const db = getDb()
+  const { sessionId } = req.params
 
-    // Set up SSE
-    res.setHeader('Content-Type', 'text/event-stream')
-    res.setHeader('Cache-Control', 'no-cache')
-    res.setHeader('Connection', 'keep-alive')
+  // Set up SSE
+  res.setHeader('Content-Type', 'text/event-stream')
+  res.setHeader('Cache-Control', 'no-cache')
+  res.setHeader('Connection', 'keep-alive')
 
-    const sendProgress = (phase: number, label: string, progress: number, data?: any) => {
+  const sendProgress = (phase: number, label: string, progress: number, data?: any) => {
+    try {
       res.write(`data: ${JSON.stringify({ phase, label, progress, ...data })}\n\n`)
+    } catch {
+      // Client disconnected, ignore write errors
     }
+  }
 
+  const sendError = (message: string) => {
+    try {
+      res.write(`data: ${JSON.stringify({ error: message })}\n\n`)
+      res.end()
+    } catch {
+      // Client disconnected
+    }
+  }
+
+  try {
     // Phase 1: Gather data
     sendProgress(1, 'Analyzing lifestyle directives', 15)
 
     const financial = db.prepare('SELECT * FROM financial_data WHERE session_id = ?').get(sessionId) as any
     if (!financial) {
-      res.write(`data: ${JSON.stringify({ error: 'Financial data not found' })}\n\n`)
-      res.end()
+      sendError('Financial data not found')
       return
     }
 
@@ -38,7 +51,6 @@ scenarioRouter.post('/:sessionId/scenarios/generate', async (req, res, next) => 
     // Phase 2: Cross-reference
     sendProgress(2, 'Cross-referencing financial data', 40)
 
-    // Estimate current age from retirement year and age
     const currentYear = new Date().getFullYear()
     const currentAge = financial.target_retirement_age - (financial.target_retirement_year - currentYear)
 
@@ -99,15 +111,15 @@ scenarioRouter.post('/:sessionId/scenarios/generate', async (req, res, next) => 
 
     // Phase 5: Complete
     sendProgress(5, 'Complete', 100, { scenarios: fullScenarios })
-
     res.end()
   } catch (err) {
-    next(err)
+    console.error('Scenario generation failed:', err)
+    sendError('Scenario generation failed. Please try again.')
   }
 })
 
 // Recalculate single scenario (for slider changes)
-scenarioRouter.post('/:sessionId/scenarios/recalculate', (req, res) => {
+scenarioRouter.post('/:sessionId/scenarios/recalculate', validateSession, (req, res) => {
   const db = getDb()
   const { sessionId } = req.params
   const { scenarioType, retirementAge, annualSpend } = req.body
@@ -129,7 +141,6 @@ scenarioRouter.post('/:sessionId/scenarios/recalculate', (req, res) => {
     annualSpend
   )
 
-  // Update in database
   db.prepare(`
     UPDATE scenarios SET retirement_age = ?, annual_spend = ?, success_probability = ?, projection_data = ?
     WHERE session_id = ? AND scenario_type = ?
@@ -145,7 +156,7 @@ scenarioRouter.post('/:sessionId/scenarios/recalculate', (req, res) => {
 })
 
 // Get scenarios
-scenarioRouter.get('/:sessionId/scenarios', (req, res) => {
+scenarioRouter.get('/:sessionId/scenarios', validateSession, (req, res) => {
   const db = getDb()
   const { sessionId } = req.params
 

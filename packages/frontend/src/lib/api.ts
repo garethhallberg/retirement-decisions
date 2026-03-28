@@ -58,10 +58,6 @@ export const api = {
       body: JSON.stringify(data),
     }),
 
-  generateScenarios: (sessionId: string) => {
-    return new EventSource(`${API_BASE}/sessions/${sessionId}/scenarios/generate`)
-  },
-
   recalculateScenario: (
     sessionId: string,
     scenarioType: string,

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback, useEffect } from 'react'
+import { useState, useCallback, useEffect, useRef } from 'react'
 import { TopNav } from '@/components/layout/TopNav'
 import { useSessionStore } from '@/store/sessionStore'
 import { api } from '@/lib/api'
@@ -28,23 +28,31 @@ function ScenarioColumn({ scenario, onRecalculate }: { scenario: Scenario; onRec
   const style = SCENARIO_STYLES[scenario.type] || SCENARIO_STYLES.balanced_path
   const [localAge, setLocalAge] = useState(scenario.retirementAge)
   const [localSpend, setLocalSpend] = useState(scenario.annualSpend)
+  const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   useEffect(() => {
     setLocalAge(scenario.retirementAge)
     setLocalSpend(scenario.annualSpend)
   }, [scenario.retirementAge, scenario.annualSpend])
 
+  const debouncedRecalculate = useCallback((type: string, age: number, spend: number) => {
+    if (debounceRef.current) clearTimeout(debounceRef.current)
+    debounceRef.current = setTimeout(() => onRecalculate(type, age, spend), 300)
+  }, [onRecalculate])
+
+  useEffect(() => {
+    return () => { if (debounceRef.current) clearTimeout(debounceRef.current) }
+  }, [])
+
   const handleAgeChange = useCallback((value: number) => {
     setLocalAge(value)
-    const timeout = setTimeout(() => onRecalculate(scenario.type, value, localSpend), 300)
-    return () => clearTimeout(timeout)
-  }, [scenario.type, localSpend, onRecalculate])
+    debouncedRecalculate(scenario.type, value, localSpend)
+  }, [scenario.type, localSpend, debouncedRecalculate])
 
   const handleSpendChange = useCallback((value: number) => {
     setLocalSpend(value)
-    const timeout = setTimeout(() => onRecalculate(scenario.type, localAge, value), 300)
-    return () => clearTimeout(timeout)
-  }, [scenario.type, localAge, onRecalculate])
+    debouncedRecalculate(scenario.type, localAge, value)
+  }, [scenario.type, localAge, debouncedRecalculate])
 
   const formatCurrency = (n: number) =>
     new Intl.NumberFormat('en-GB', { style: 'currency', currency: 'GBP', maximumFractionDigits: 0 }).format(n)

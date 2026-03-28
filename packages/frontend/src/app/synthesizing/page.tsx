@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { useSessionStore } from '@/store/sessionStore'
 
@@ -10,16 +10,10 @@ export default function SynthesizingPage() {
   const [heritageNodes, setHeritageNodes] = useState(0)
   const router = useRouter()
   const { sessionId, setScenarios } = useSessionStore()
-  const eventSourceRef = useRef<EventSource | null>(null)
 
   useEffect(() => {
     if (!sessionId) return
 
-    const es = new EventSource(`/api/sessions/${sessionId}/scenarios/generate`, {
-    })
-
-    // We need to use POST, but EventSource only supports GET.
-    // Instead, use fetch with a reader.
     const controller = new AbortController()
 
     fetch(`/api/sessions/${sessionId}/scenarios/generate`, {
@@ -27,6 +21,11 @@ export default function SynthesizingPage() {
       headers: { 'Content-Type': 'application/json' },
       signal: controller.signal,
     }).then(async (response) => {
+      if (!response.ok) {
+        console.error('Synthesis request failed:', response.status)
+        return
+      }
+
       const reader = response.body?.getReader()
       if (!reader) return
 
@@ -57,7 +56,7 @@ export default function SynthesizingPage() {
                 setScenarios(data.scenarios)
                 setTimeout(() => router.push('/dashboard'), 1500)
               }
-            } catch (e) {
+            } catch {
               // Skip unparseable lines
             }
           }
@@ -68,9 +67,6 @@ export default function SynthesizingPage() {
         console.error('Synthesis failed:', err)
       }
     })
-
-    // Close the original EventSource since we're using fetch instead
-    es.close()
 
     return () => {
       controller.abort()

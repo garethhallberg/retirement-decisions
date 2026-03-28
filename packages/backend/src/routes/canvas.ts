@@ -2,11 +2,12 @@ import { Router } from 'express'
 import { v4 as uuidv4 } from 'uuid'
 import { getDb } from '../db/connection.js'
 import { generateCanvasCards } from '../services/claude.js'
+import { validateSession } from '../middleware/validateSession.js'
 
 export const canvasRouter = Router()
 
 // Generate canvas cards from conversation
-canvasRouter.post('/:sessionId/canvas/generate', async (req, res, next) => {
+canvasRouter.post('/:sessionId/canvas/generate', validateSession, async (req, res, next) => {
   try {
     const db = getDb()
     const { sessionId } = req.params

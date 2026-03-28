@@ -110,6 +110,21 @@ export async function getConversationResponse(
   return { response: cleanedText, isComplete }
 }
 
+// Extract JSON from Claude's response, handling markdown code fences
+function extractJson(text: string): any {
+  // Try direct parse first
+  try {
+    return JSON.parse(text)
+  } catch {
+    // Strip markdown code fences if present
+    const fenceMatch = text.match(/```(?:json)?\s*\n?([\s\S]*?)\n?```/)
+    if (fenceMatch) {
+      return JSON.parse(fenceMatch[1].trim())
+    }
+    throw new Error(`Failed to parse Claude response as JSON: ${text.slice(0, 200)}`)
+  }
+}
+
 export async function generateCanvasCards(
   conversationTranscript: string
 ): Promise<Array<{ title: string; description: string; category: string; imageQuery: string }>> {
@@ -123,8 +138,8 @@ export async function generateCanvasCards(
   })
 
   const text = response.content[0].type === 'text' ? response.content[0].text : '{}'
-  const parsed = JSON.parse(text)
-  return parsed.cards
+  const parsed = extractJson(text)
+  return parsed.cards || []
 }
 
 export async function generateScenarioNarratives(
@@ -145,6 +160,6 @@ export async function generateScenarioNarratives(
   })
 
   const text = response.content[0].type === 'text' ? response.content[0].text : '{}'
-  const parsed = JSON.parse(text)
-  return parsed.scenarios
+  const parsed = extractJson(text)
+  return parsed.scenarios || []
 }
