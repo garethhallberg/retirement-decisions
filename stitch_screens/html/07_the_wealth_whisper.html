@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Wealth Whisper | The Archivist</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400&amp;family=Manrope:wght@200;300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "inverse-surface": "#30312e",
+                        "error": "#ba1a1a",
+                        "secondary-container": "#e2dfde",
+                        "surface-bright": "#fbf9f4",
+                        "on-surface-variant": "#4e4639",
+                        "surface-container-low": "#f5f3ee",
+                        "on-tertiary-fixed-variant": "#304671",
+                        "on-tertiary-fixed": "#001a41",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed-dim": "#b0c6f9",
+                        "on-background": "#1b1c19",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "tertiary-fixed": "#d8e2ff",
+                        "on-primary-container": "#4e3700",
+                        "inverse-primary": "#e9c176",
+                        "inverse-on-surface": "#f2f1ec",
+                        "error-container": "#ffdad6",
+                        "surface-variant": "#e4e2dd",
+                        "on-tertiary-container": "#233a65",
+                        "surface": "#fbf9f4",
+                        "outline-variant": "#d1c5b4",
+                        "tertiary-container": "#8fa5d6",
+                        "surface-container-high": "#eae8e3",
+                        "on-surface": "#1b1c19",
+                        "surface-tint": "#775a19",
+                        "on-primary": "#ffffff",
+                        "outline": "#7f7667",
+                        "on-secondary-fixed-variant": "#474746",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#e5e2e1",
+                        "surface-dim": "#dbdad5",
+                        "tertiary": "#485e8b",
+                        "on-error": "#ffffff",
+                        "on-secondary-container": "#636262",
+                        "on-error-container": "#93000a",
+                        "surface-container": "#f0eee9",
+                        "background": "#fbf9f4",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "primary-fixed-dim": "#e9c176",
+                        "on-primary-fixed": "#261900",
+                        "primary-fixed": "#ffdea5",
+                        "on-primary-fixed-variant": "#5d4201",
+                        "surface-container-highest": "#e4e2dd",
+                        "secondary": "#5f5e5e",
+                        "primary-container": "#c5a059",
+                        "primary": "#775a19"
+                    },
+                    fontFamily: {
+                        "headline": ["Noto Serif"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"],
+                        "noto-serif": ["Noto Serif"],
+                        "manrope": ["Manrope"]
+                    },
+                    borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .unhurried-transition { transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+        .tonal-shift-bg { background-color: #fbf9f4; }
+        .glass-vellum {
+            backdrop-filter: blur(24px);
+            background-color: rgba(251, 249, 244, 0.8);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container/30">
+<!-- Top Navigation -->
+<nav class="bg-[#fbf9f4] dark:bg-[#1b1c19] flex justify-between items-center w-full px-10 py-6 max-w-none fixed top-0 z-50 tonal-shift-bg">
+<div class="font-noto-serif text-2xl tracking-tighter text-[#1b1c19] dark:text-[#fbf9f4]">The Archivist</div>
+<div class="hidden md:flex gap-12">
+<a class="text-[#775a19] dark:text-[#c5a059] font-medium font-noto-serif font-light tracking-tight text-lg transition-colors duration-300" href="#">Vault</a>
+<a class="text-[#1b1c19]/60 dark:text-[#fbf9f4]/60 font-noto-serif font-light tracking-tight text-lg hover:text-[#775a19] transition-colors duration-300" href="#">Heritage</a>
+<a class="text-[#1b1c19]/60 dark:text-[#fbf9f4]/60 font-noto-serif font-light tracking-tight text-lg hover:text-[#775a19] transition-colors duration-300" href="#">Legacy</a>
+</div>
+<div class="text-[#775a19] dark:text-[#c5a059] cursor-pointer">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</div>
+</nav>
+<main class="min-h-screen pt-32 pb-40 px-6 md:px-24 lg:px-48 max-w-7xl mx-auto">
+<!-- Hero Header -->
+<header class="mb-24 text-center md:text-left">
+<div class="flex flex-col md:flex-row md:items-baseline gap-4 mb-8">
+<span class="font-manrope uppercase tracking-[0.4em] text-[10px] text-primary">Interrogatory V</span>
+<div class="h-[1px] flex-grow bg-outline-variant/20 hidden md:block"></div>
+</div>
+<h1 class="font-noto-serif text-5xl md:text-7xl font-light tracking-tighter text-on-surface mb-6">The Wealth Whisper</h1>
+<p class="font-manrope text-sm uppercase tracking-widest text-on-surface-variant max-w-xl leading-relaxed">
+                A quiet examination of temporal assets and the architecture of your financial horizon.
+            </p>
+</header>
+<!-- Interview Dialogue Section -->
+<div class="space-y-32">
+<!-- Exchange 1 -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<div class="lg:col-span-4">
+<p class="font-manrope uppercase tracking-[0.2em] text-[10px] text-primary mb-4">The Archivist</p>
+<h3 class="font-noto-serif text-2xl italic leading-snug text-on-surface-variant">
+                        "In the quiet inventory of one's life, how do you define the weight of your tangible assets today?"
+                    </h3>
+</div>
+<div class="lg:col-span-1 hidden lg:block"></div>
+<div class="lg:col-span-7 pt-2">
+<p class="font-manrope uppercase tracking-[0.2em] text-[10px] text-on-surface/40 mb-6">Subject Response</p>
+<div class="font-noto-serif text-xl md:text-2xl leading-relaxed text-on-surface space-y-6">
+<p>It feels less like weight and more like a reservoir. Between the properties and the liquid holdings, there is a total of roughly 4.2 million. It is a silent partner that allows for the luxury of not rushing.</p>
+<div class="pt-4">
+<input class="w-full bg-transparent border-0 border-b border-outline-variant/30 py-4 font-noto-serif italic text-lg focus:ring-0 focus:border-primary transition-colors placeholder:text-outline-variant/50" placeholder="Refine total asset estimation..." type="text"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Exchange 2 (Asymmetric Image Placement) -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<div class="lg:col-span-7 order-2 lg:order-1">
+<p class="font-manrope uppercase tracking-[0.2em] text-[10px] text-primary mb-4">The Archivist</p>
+<h3 class="font-noto-serif text-2xl italic leading-snug text-on-surface-variant mb-12">
+                        "Consider the sunset of your formal labor. When does the transition to pension and legacy begin?"
+                    </h3>
+<p class="font-manrope uppercase tracking-[0.2em] text-[10px] text-on-surface/40 mb-6">Subject Response</p>
+<div class="font-noto-serif text-xl md:text-2xl leading-relaxed text-on-surface">
+<p>I anticipate the shift at sixty-four. The pension should trigger then, harmonizing with the private annuities. It is a deliberate choice—to stop building and start curating.</p>
+<div class="mt-12 flex gap-8">
+<div class="flex flex-col border-l border-primary/20 pl-6">
+<span class="font-manrope text-[10px] uppercase tracking-widest text-on-surface-variant">Target Year</span>
+<span class="text-3xl font-light font-noto-serif">2032</span>
+</div>
+<div class="flex flex-col border-l border-primary/20 pl-6">
+<span class="font-manrope text-[10px] uppercase tracking-widest text-on-surface-variant">Active Age</span>
+<span class="text-3xl font-light font-noto-serif">64</span>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-5 order-1 lg:order-2 flex justify-end">
+<div class="w-full aspect-[4/5] bg-surface-container-high overflow-hidden">
+<img alt="Archival office with fountain pen and ledger" class="w-full h-full object-cover grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-1000" data-alt="Minimalist desk with a high-end fountain pen resting on a heavy-stock cream paper ledger, soft morning light hitting the paper grain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVWxO7aGFFhQWZxlSMxRmf0Rj-PCs9hAT8ixr-mCgYPGatqmw4vV0UrpY16RZu7m4vdzNvMCQBWH-6hEW6-O-qDAaX4pd-lvC8joAwLmmvbewQuLGFMASk9ZQ2zx-KrTyuFzQe81JKgL5OOy1HELOvG-5nBDKcsnAYSE30zY0qnFIPsWr4Ebg6jjhUm0AFT2wCx_npxbqJrhr2vdfRZo06P_wSsoeT876u_E4jpnHyNc03TtPO9OSEy0mlU8RucU40xil7r0fKXIA"/>
+</div>
+</div>
+</section>
+<!-- Exchange 3 (Bento-style Spend Data) -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+<div class="lg:col-span-12">
+<p class="font-manrope uppercase tracking-[0.2em] text-[10px] text-primary mb-4">The Archivist</p>
+<h3 class="font-noto-serif text-2xl italic leading-snug text-on-surface-variant max-w-2xl">
+                        "To sustain this rhythm of life, what is the annual requirement? Let us define the cost of your contentment."
+                    </h3>
+</div>
+<div class="lg:col-span-4 bg-surface-container-low p-12">
+<span class="font-manrope text-[10px] uppercase tracking-widest text-primary mb-8 block">Fixed Sustenance</span>
+<div class="font-noto-serif text-4xl font-light mb-4">£120,000</div>
+<p class="font-manrope text-xs leading-relaxed text-on-surface-variant/70 italic">
+                        Essential operations, property maintenance, and the core of the estate's function.
+                    </p>
+</div>
+<div class="lg:col-span-4 bg-surface-container-highest p-12">
+<span class="font-manrope text-[10px] uppercase tracking-widest text-primary mb-8 block">Discretionary Joy</span>
+<div class="font-noto-serif text-4xl font-light mb-4">£45,000</div>
+<p class="font-manrope text-xs leading-relaxed text-on-surface-variant/70 italic">
+                        Travel, acquisition of art, and the unhurried exploration of the world's quiet corners.
+                    </p>
+</div>
+<div class="lg:col-span-4 flex flex-col justify-center border-y border-outline-variant/10 py-12">
+<p class="font-noto-serif text-xl italic text-on-surface-variant mb-6">"Is this reflection accurate to your current desires?"</p>
+<div class="flex gap-4">
+<button class="bg-primary text-on-primary font-manrope uppercase tracking-widest text-[10px] px-8 py-3 hover:bg-primary-container transition-all duration-300">Confirm Figure</button>
+<button class="bg-transparent border border-outline-variant/30 text-on-surface font-manrope uppercase tracking-widest text-[10px] px-8 py-3 hover:bg-surface-container-high transition-all duration-300">Adjust</button>
+</div>
+</div>
+</section>
+</div>
+<!-- Footer Call to Action -->
+<footer class="mt-48 pt-24 border-t border-outline-variant/10 flex flex-col items-center text-center">
+<h2 class="font-noto-serif text-3xl font-light mb-12 italic text-on-surface-variant">The dialogue continues in the Vault.</h2>
+<div class="w-full max-w-sm aspect-video bg-surface-container-low mb-12 overflow-hidden">
+<img alt="Close up of signature on archival paper" class="w-full h-full object-cover mix-blend-multiply opacity-60" data-alt="Macro photography of a slow-drying ink signature on thick ivory paper, shallow depth of field, warm candlelight atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQHZCnD1U8wZSbj0AQ75lsu9baOOCvIDBagjGVmTyplndX-QTu3rQK1UdvlOBPOefH_E2jra0Rx8GK804T_GmILErZfV2Ib1s4FVJefihrd_R4AQqIOIyLqAStl5Q3S-4NdNMUfctBkvsnuBRLhlxWr8HN7BoXL8bXz66alLbLz06nwaBjYWakLYv7x6qCZly8cbvarV_rIu7WfOBUz6wwXHeAuH0U74OSSLW0qdKNgF3DPsl50VRyYxguQw1m6Gfb5N34mD3mAbM"/>
+</div>
+<button class="bg-primary text-on-primary px-16 py-5 font-manrope uppercase tracking-[0.3em] text-xs hover:bg-primary-container unhurried-transition">
+                Archive this Chapter
+            </button>
+</footer>
+</main>
+<!-- Bottom Navigation (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-12 py-8 bg-[#fbf9f4]/80 dark:bg-[#1b1c19]/80 backdrop-blur-xl z-50 shadow-[0_-4px_40px_rgba(27,28,25,0.04)]">
+<div class="text-[#1b1c19]/30 dark:text-[#fbf9f4]/30 flex flex-col items-center">
+<span class="material-symbols-outlined" data-icon="event_note">event_note</span>
+<span class="font-manrope text-[9px] uppercase tracking-widest mt-1">Timeline</span>
+</div>
+<div class="text-[#1b1c19]/30 dark:text-[#fbf9f4]/30 flex flex-col items-center">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="font-manrope text-[9px] uppercase tracking-widest mt-1">Journal</span>
+</div>
+<div class="text-[#775a19] dark:text-[#c5a059] flex flex-col items-center scale-105">
+<span class="material-symbols-outlined" data-icon="format_list_bulleted">format_list_bulleted</span>
+<span class="font-manrope text-[9px] uppercase tracking-widest mt-1">Index</span>
+</div>
+</nav>
+</body></html>

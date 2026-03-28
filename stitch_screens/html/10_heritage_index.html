@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Archivist | Heritage Index</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,300;0,400;0,700;1,400&amp;family=Manrope:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-fixed-dim": "#e9c176",
+                        "inverse-on-surface": "#f2f1ec",
+                        "primary-container": "#c5a059",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#001a41",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed": "#ffdea5",
+                        "on-secondary-fixed-variant": "#474746",
+                        "secondary-container": "#e2dfde",
+                        "on-surface": "#1b1c19",
+                        "on-error": "#ffffff",
+                        "primary": "#775a19",
+                        "error-container": "#ffdad6",
+                        "tertiary": "#485e8b",
+                        "tertiary-fixed": "#d8e2ff",
+                        "surface-tint": "#775a19",
+                        "surface-container-high": "#eae8e3",
+                        "on-secondary-container": "#636262",
+                        "on-primary-fixed-variant": "#5d4201",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed": "#261900",
+                        "on-tertiary-fixed-variant": "#304671",
+                        "surface-dim": "#dbdad5",
+                        "outline": "#7f7667",
+                        "surface": "#fbf9f4",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "outline-variant": "#d1c5b4",
+                        "on-background": "#1b1c19",
+                        "surface-container": "#f0eee9",
+                        "on-primary-container": "#4e3700",
+                        "tertiary-fixed-dim": "#b0c6f9",
+                        "surface-container-highest": "#e4e2dd",
+                        "on-tertiary-container": "#233a65",
+                        "on-secondary": "#ffffff",
+                        "surface-container-low": "#f5f3ee",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "inverse-primary": "#e9c176",
+                        "background": "#fbf9f4",
+                        "on-surface-variant": "#4e4639",
+                        "secondary-fixed": "#e5e2e1",
+                        "secondary": "#5f5e5e",
+                        "surface-variant": "#e4e2dd",
+                        "inverse-surface": "#30312e",
+                        "surface-bright": "#fbf9f4",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff",
+                        "tertiary-container": "#8fa5d6"
+                    },
+                    fontFamily: {
+                        "headline": ["Noto Serif"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    },
+                    borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fbf9f4;
+            color: #1b1c19;
+            -webkit-font-smoothing: antialiased;
+        }
+        .grainy-overlay {
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="font-body selection:bg-primary-container/30">
+<!-- TopNavBar -->
+<nav class="bg-[#fbf9f4] dark:bg-[#1b1c19] docked full-width top-0 z-50 fixed w-full">
+<div class="flex justify-between items-center w-full px-12 py-6 max-w-[1920px] mx-auto">
+<div class="font-serif text-2xl font-light tracking-[0.2em] text-[#1b1c19] dark:text-[#fbf9f4]">
+                THE ARCHIVIST
+            </div>
+<div class="hidden md:flex items-center space-x-12">
+<a class="font-serif text-sm tracking-wide uppercase text-[#775a19] dark:text-[#c5a059] font-semibold hover:bg-[#f5f3ee] dark:hover:bg-[#2a2b27] transition-colors duration-300" href="#">Heritage Index</a>
+<a class="font-serif text-sm tracking-wide uppercase text-[#1b1c19]/60 dark:text-[#fbf9f4]/60 hover:bg-[#f5f3ee] dark:hover:bg-[#2a2b27] transition-colors duration-300" href="#">Directives</a>
+<a class="font-serif text-sm tracking-wide uppercase text-[#1b1c19]/60 dark:text-[#fbf9f4]/60 hover:bg-[#f5f3ee] dark:hover:bg-[#2a2b27] transition-colors duration-300" href="#">Vault</a>
+</div>
+<div class="flex items-center space-x-6 text-[#775a19]">
+<span class="material-symbols-outlined cursor-pointer hover:bg-[#f5f3ee] p-2 transition-colors duration-300" data-icon="settings">settings</span>
+<span class="material-symbols-outlined cursor-pointer hover:bg-[#f5f3ee] p-2 transition-colors duration-300" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+</nav>
+<div class="flex min-h-screen pt-24">
+<!-- SideNavBar -->
+<aside class="bg-[#f5f3ee] dark:bg-[#1b1c19] h-screen w-72 left-0 top-0 fixed hidden lg:block border-r border-[#e4e2dd]/30">
+<div class="flex flex-col h-full py-10 px-6 space-y-8 mt-16">
+<div class="flex items-center space-x-4 mb-8">
+<div class="w-12 h-12 bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="account_circle">account_circle</span>
+</div>
+<div>
+<div class="font-serif text-sm tracking-widest uppercase text-[#1b1c19] dark:text-[#fbf9f4]">The Archivist</div>
+<div class="text-[10px] uppercase tracking-tighter text-outline">Later Life Planning Studio</div>
+</div>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center space-x-4 px-4 py-3 bg-[#e4e2dd] dark:bg-[#2a2b27] text-[#775a19] dark:text-[#c5a059] font-medium transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="folder_open">folder_open</span>
+<span class="font-serif tracking-normal">Archive</span>
+</a>
+<a class="flex items-center space-x-4 px-4 py-3 text-[#1b1c19]/70 dark:text-[#fbf9f4]/70 hover:bg-[#e4e2dd]/50 dark:hover:bg-white/5 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
+<span class="font-serif tracking-normal">Directives</span>
+</a>
+<a class="flex items-center space-x-4 px-4 py-3 text-[#1b1c19]/70 dark:text-[#fbf9f4]/70 hover:bg-[#e4e2dd]/50 dark:hover:bg-white/5 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance">account_balance</span>
+<span class="font-serif tracking-normal">Legacy Vault</span>
+</a>
+<a class="flex items-center space-x-4 px-4 py-3 text-[#1b1c19]/70 dark:text-[#fbf9f4]/70 hover:bg-[#e4e2dd]/50 dark:hover:bg-white/5 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="key">key</span>
+<span class="font-serif tracking-normal">Security</span>
+</a>
+</nav>
+<div class="pt-8 space-y-4">
+<button class="w-full bg-primary text-on-primary py-4 font-serif text-sm tracking-widest uppercase">New Entry</button>
+<div class="pt-6 space-y-2">
+<a class="flex items-center space-x-4 px-4 py-2 text-[#1b1c19]/70 dark:text-[#fbf9f4]/70 hover:bg-[#e4e2dd]/50 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+<span class="text-xs uppercase tracking-widest font-serif">Help</span>
+</a>
+<a class="flex items-center space-x-4 px-4 py-2 text-[#1b1c19]/70 dark:text-[#fbf9f4]/70 hover:bg-[#e4e2dd]/50 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="text-xs uppercase tracking-widest font-serif">Sign Out</span>
+</a>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 lg:ml-72 bg-surface min-h-screen relative">
+<div class="grainy-overlay"></div>
+<div class="max-w-[1400px] mx-auto px-12 md:px-24 py-20">
+<!-- Hero Section / Header -->
+<header class="mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-outline-variant/20 pb-12">
+<div class="max-w-2xl">
+<h6 class="font-label text-xs uppercase tracking-[0.4em] text-primary mb-4">Collection 01</h6>
+<h1 class="font-headline text-5xl md:text-7xl font-light text-on-surface leading-tight">Heritage Index</h1>
+<p class="font-body text-lg text-on-surface-variant mt-8 leading-relaxed italic opacity-80">
+                            A curated selection of defining milestones, captured in high fidelity for the legacy preservation cycle.
+                        </p>
+</div>
+<div class="flex items-center space-x-6">
+<span class="font-label text-xs tracking-widest uppercase opacity-40">Sort By</span>
+<button class="font-serif text-sm italic flex items-center gap-2 group">
+                            Chronological 
+                            <span class="material-symbols-outlined text-sm transition-transform group-hover:translate-y-1" data-icon="expand_more">expand_more</span>
+</button>
+</div>
+</header>
+<!-- Archival Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-12 gap-y-24">
+<!-- Archive Card 1 -->
+<article class="group cursor-pointer">
+<div class="relative aspect-[4/5] bg-surface-container-high overflow-hidden grayscale contrast-125 mb-8">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Vintage sepia landscape of rolling hills in Tuscany with a lone cypress tree and soft evening haze" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2tij05nNgYqsD5uoYcKW9BXxTnNXSrZrsp-WBjMu-noLpTNemGRvhDkjTdCpFlq7b77hN_qd67rUJTd1l1CPKHyyDZC8FdrLHcHTYslAt0Q2E8SQ5hHNaqZEukuDdDFt61OZsA4vImZ9s3Nc2YHZBJo_MUryz7Crj1lNSVzk1I79CAVuY1qDye93P_UHVpwBDxGxhLL72hioDxjJmXYGGmimOLnWoyaKXva56EvXJLKXxQI6C5TvjvNET0NdBtGLYUe-0BCkWdUM"/>
+<div class="absolute inset-0 bg-primary/10 mix-blend-multiply opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="absolute top-6 left-6 font-label text-[10px] tracking-[0.3em] uppercase bg-surface/90 px-3 py-1">ARCHIVE.042</div>
+</div>
+<h3 class="font-headline text-2xl text-on-surface mb-2">Tuscany '23</h3>
+<div class="flex items-center justify-between">
+<p class="font-label text-xs tracking-widest uppercase text-outline">September 14, 2023</p>
+<span class="material-symbols-outlined text-primary scale-0 group-hover:scale-100 transition-transform duration-300" data-icon="arrow_outward">arrow_outward</span>
+</div>
+</article>
+<!-- Archive Card 2 -->
+<article class="group cursor-pointer md:mt-24">
+<div class="relative aspect-[4/5] bg-surface-container-high overflow-hidden grayscale contrast-125 mb-8">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Grainy black and white photograph of a classic luxury hotel facade with grand architecture and palm trees" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwowPrbHDGbav9g_EDyUSqfWEOrDy4QOfd53RNGBMTz8ASfpNFlsCdj_ayLb4p6ziFn-VJ0wZFkTua6O24va9UsryGtew3ke_VgK6um4nYFEwX8vU7Jnv4GKWsHtEN-SL2pi5wN4ks5uyBPEbEo5I7f74fTs1xFSAoAZ1GV6rM-ybBN3s8z-OWDYP67GaTv9b9vNSwqr0j9L5ySi7290TA8Oq30lsU5mBwhs5nhvnTSn17aD2uJsXVSaUGW1jQufwvISAKIoVWNlg"/>
+<div class="absolute inset-0 bg-primary/10 mix-blend-multiply opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="absolute top-6 left-6 font-label text-[10px] tracking-[0.3em] uppercase bg-surface/90 px-3 py-1">ARCHIVE.089</div>
+</div>
+<h3 class="font-headline text-2xl text-on-surface mb-2">The Algarve Project</h3>
+<div class="flex items-center justify-between">
+<p class="font-label text-xs tracking-widest uppercase text-outline">June 22, 2023</p>
+<span class="material-symbols-outlined text-primary scale-0 group-hover:scale-100 transition-transform duration-300" data-icon="arrow_outward">arrow_outward</span>
+</div>
+</article>
+<!-- Archive Card 3 -->
+<article class="group cursor-pointer">
+<div class="relative aspect-[4/5] bg-surface-container-high overflow-hidden grayscale contrast-125 mb-8">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Moody black and white close up of a sailboat mast and ropes against a cloudy sky over the open ocean" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLRPPppxynzlWpjewWcG6TE0v_-pGVLsghaqRcBElD8zPFN6mHw_7c1lhVRVJbCmWIxQS0wpjFkCT0HBT5HWw1HIS-P2vu5gMCJOVyq4J2v_Q82b59HdV3mLtww_FguCBMTd0jVifSH0MUzrQm9l1GiYaB_W5_AR29qFjk0N_2PCDyPK3CcC4eGnA43YnG70Uc9QMSFbxA9cIAnqkuVzBeX4brbqL0DYNWog_sTdZ1FpiKgyjgC31YslEu7da_jbOvGGDGd73m1Oo"/>
+<div class="absolute inset-0 bg-primary/10 mix-blend-multiply opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="absolute top-6 left-6 font-label text-[10px] tracking-[0.3em] uppercase bg-surface/90 px-3 py-1">ARCHIVE.114</div>
+</div>
+<h3 class="font-headline text-2xl text-on-surface mb-2">Aegean Crossing</h3>
+<div class="flex items-center justify-between">
+<p class="font-label text-xs tracking-widest uppercase text-outline">August 05, 2022</p>
+<span class="material-symbols-outlined text-primary scale-0 group-hover:scale-100 transition-transform duration-300" data-icon="arrow_outward">arrow_outward</span>
+</div>
+</article>
+<!-- Archive Card 4 -->
+<article class="group cursor-pointer">
+<div class="relative aspect-[4/5] bg-surface-container-high overflow-hidden grayscale contrast-125 mb-8">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Archival style photo of a rocky coastline with waves crashing against dramatic dark cliffs under a misty morning sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlYMZEfEMt1DlXZ3FucVKLxzoNrOx3ELtxrBiOCFIoS8NBSLXqi3hEKf79qFfyywJ9N_RPVpkMon3jzwBQmfMzxkKRrXRL_LjNesAjYdzH0n_WRvASNm5pvQyevWEHsMoUcUri-6mAo8zlljk8Y8077EbfdJbvFFhxcYiwHRJUI0MOAQpEIdDWmkTfu5ZITrJDbRTWXr6KcaozS8Yfzt9eWquTPEnBcm7RA6K1xd3kDzZXMgVOz61V74JMHE3bn_7MhNfWdMOi1CU"/>
+<div class="absolute inset-0 bg-primary/10 mix-blend-multiply opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="absolute top-6 left-6 font-label text-[10px] tracking-[0.3em] uppercase bg-surface/90 px-3 py-1">ARCHIVE.203</div>
+</div>
+<h3 class="font-headline text-2xl text-on-surface mb-2">Highland Solitude</h3>
+<div class="flex items-center justify-between">
+<p class="font-label text-xs tracking-widest uppercase text-outline">November 11, 2022</p>
+<span class="material-symbols-outlined text-primary scale-0 group-hover:scale-100 transition-transform duration-300" data-icon="arrow_outward">arrow_outward</span>
+</div>
+</article>
+<!-- Archive Card 5 (Asymmetric offset) -->
+<article class="group cursor-pointer md:mt-[-8rem]">
+<div class="relative aspect-[4/5] bg-surface-container-high overflow-hidden grayscale contrast-125 mb-8">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Vintage photograph of an old world library with high shelves full of leather bound books and dust motes in sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwfcosz_u1s3gDRu2Y2Fm7728FyulIhJIMgCFq279hBMAIR5gAF4yo1frRwS5tR8c5USR21t95H8r3MxwUSl6zbNmioBj_fq6ZVfIR1Su8n_Y-IASgwWaFNctV3esoSPBZt9ZRdvLDh92b9tj9BwrpmXP8HbEVO9iy_eknojDcOg6OQgOaFgn29jYTIJjeSyo4RWI76cvYI87KbnWC9XdJJxefxNIsiScgpaFuDUBxtmWcW0eXCfFi7Twe8R_sD1EEhithHaFpQns"/>
+<div class="absolute inset-0 bg-primary/10 mix-blend-multiply opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="absolute top-6 left-6 font-label text-[10px] tracking-[0.3em] uppercase bg-surface/90 px-3 py-1">ARCHIVE.001</div>
+</div>
+<h3 class="font-headline text-2xl text-on-surface mb-2">The Curator's Study</h3>
+<div class="flex items-center justify-between">
+<p class="font-label text-xs tracking-widest uppercase text-outline">January 01, 2024</p>
+<span class="material-symbols-outlined text-primary scale-0 group-hover:scale-100 transition-transform duration-300" data-icon="arrow_outward">arrow_outward</span>
+</div>
+</article>
+<!-- Archive Card 6 -->
+<article class="group cursor-pointer">
+<div class="relative aspect-[4/5] bg-surface-container-high overflow-hidden grayscale contrast-125 mb-8">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Classic still life of an antique typewriter, glasses, and a glass of scotch on a dark mahogany desk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgfxUuBGkSQWwx191-bBhHMdTHIO6AO7OJgtRIZp2EKd9EzTTtjDIVZR2EU74fCWxIEhcg2zjzZAgOByZsOvhG7C97KLczqaBUCtd_rjO0onjmODrRYC-lLhwgDcRF5MQbfDskvJf3JqQJGrYgMI48gjTugsofDOV5Ybl7ox-euF259EvNEsd4C844dI0nOwJrortXIG0TEpwt8m8ZV6O98kycNx5QYL_qHRtDPG893B118Q3UNYZhypt1YrxcB-QLZn6OSHARPSI"/>
+<div class="absolute inset-0 bg-primary/10 mix-blend-multiply opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="absolute top-6 left-6 font-label text-[10px] tracking-[0.3em] uppercase bg-surface/90 px-3 py-1">ARCHIVE.332</div>
+</div>
+<h3 class="font-headline text-2xl text-on-surface mb-2">Midnight Memoirs</h3>
+<div class="flex items-center justify-between">
+<p class="font-label text-xs tracking-widest uppercase text-outline">December 31, 2023</p>
+<span class="material-symbols-outlined text-primary scale-0 group-hover:scale-100 transition-transform duration-300" data-icon="arrow_outward">arrow_outward</span>
+</div>
+</article>
+</div>
+<!-- Footer Narrative -->
+<footer class="mt-40 pt-16 border-t border-outline-variant/10 text-center">
+<div class="max-w-xl mx-auto">
+<span class="material-symbols-outlined text-primary-container text-4xl mb-6" data-icon="history_edu">history_edu</span>
+<h4 class="font-headline text-3xl font-light italic mb-6">"Every life is a masterpiece deserving of a meticulous archive."</h4>
+<div class="font-label text-[10px] tracking-[0.5em] uppercase text-outline">End of Current Index</div>
+<div class="mt-12 flex justify-center gap-12">
+<button class="font-label text-xs tracking-widest uppercase hover:text-primary transition-colors">Previous Decades</button>
+<button class="font-label text-xs tracking-widest uppercase hover:text-primary transition-colors">Export Ledger</button>
+</div>
+</div>
+</footer>
+</div>
+</main>
+</div>
+<!-- Mobile Navigation Bottom Bar -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-surface border-t border-outline-variant/10 px-6 py-4 z-50 flex justify-around items-center">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" data-icon="folder_open" style="font-variation-settings: 'FILL' 1;">folder_open</span>
+<span class="text-[9px] uppercase tracking-tighter">Index</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-outline" href="#">
+<span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
+<span class="text-[9px] uppercase tracking-tighter">Directives</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-outline" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance">account_balance</span>
+<span class="text-[9px] uppercase tracking-tighter">Vault</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-outline" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-[9px] uppercase tracking-tighter">Settings</span>
+</a>
+</nav>
+</body></html>

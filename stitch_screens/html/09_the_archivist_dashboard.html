@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,300;0,400;0,700;1,300&amp;family=Manrope:wght@200;300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "inverse-surface": "#30312e",
+              "error": "#ba1a1a",
+              "secondary-container": "#e2dfde",
+              "surface-bright": "#fbf9f4",
+              "on-surface-variant": "#4e4639",
+              "surface-container-low": "#f5f3ee",
+              "on-tertiary-fixed-variant": "#304671",
+              "on-tertiary-fixed": "#001a41",
+              "on-tertiary": "#ffffff",
+              "on-secondary": "#ffffff",
+              "tertiary-fixed-dim": "#b0c6f9",
+              "on-background": "#1b1c19",
+              "secondary-fixed-dim": "#c8c6c5",
+              "tertiary-fixed": "#d8e2ff",
+              "on-primary-container": "#4e3700",
+              "inverse-primary": "#e9c176",
+              "inverse-on-surface": "#f2f1ec",
+              "error-container": "#ffdad6",
+              "surface-variant": "#e4e2dd",
+              "on-tertiary-container": "#233a65",
+              "surface": "#fbf9f4",
+              "outline-variant": "#d1c5b4",
+              "tertiary-container": "#8fa5d6",
+              "surface-container-high": "#eae8e3",
+              "on-surface": "#1b1c19",
+              "surface-tint": "#775a19",
+              "on-primary": "#ffffff",
+              "outline": "#7f7667",
+              "on-secondary-fixed-variant": "#474746",
+              "surface-container-lowest": "#ffffff",
+              "secondary-fixed": "#e5e2e1",
+              "surface-dim": "#dbdad5",
+              "tertiary": "#485e8b",
+              "on-error": "#ffffff",
+              "on-secondary-container": "#636262",
+              "on-error-container": "#93000a",
+              "surface-container": "#f0eee9",
+              "background": "#fbf9f4",
+              "on-secondary-fixed": "#1c1b1b",
+              "primary-fixed-dim": "#e9c176",
+              "on-primary-fixed": "#261900",
+              "primary-fixed": "#ffdea5",
+              "on-primary-fixed-variant": "#5d4201",
+              "surface-container-highest": "#e4e2dd",
+              "secondary": "#5f5e5e",
+              "primary-container": "#c5a059",
+              "primary": "#775a19"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="bg-[#fbf9f4] dark:bg-[#1b1c19] flex justify-between items-center w-full px-10 py-6 max-w-none sticky top-0 z-50">
+<div class="font-noto-serif text-2xl tracking-tighter text-[#1b1c19] dark:text-[#fbf9f4]">
+            The Archivist
+        </div>
+<div class="hidden md:flex gap-12">
+<a class="text-[#775a19] dark:text-[#c5a059] font-medium font-noto-serif font-light tracking-tight text-lg hover:text-[#775a19] transition-colors duration-300" href="#">Heritage</a>
+<a class="text-[#1b1c19]/60 dark:text-[#fbf9f4]/60 font-noto-serif font-light tracking-tight text-lg hover:text-[#775a19] transition-colors duration-300" href="#">Directives</a>
+<a class="text-[#1b1c19]/60 dark:text-[#fbf9f4]/60 font-noto-serif font-light tracking-tight text-lg hover:text-[#775a19] transition-colors duration-300" href="#">Legacy</a>
+</div>
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-[#775a19] dark:text-[#c5a059] cursor-pointer">menu</span>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="min-h-screen pt-8 pb-32 px-6 md:px-12 lg:px-20 max-w-[1600px] mx-auto">
+<!-- Header Section -->
+<header class="mb-16">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<p class="font-label text-xs uppercase tracking-[0.3em] text-outline mb-4">Financial Cartography</p>
+<h1 class="font-headline text-5xl md:text-6xl text-on-surface tracking-tighter max-w-2xl leading-tight">
+                        The Archivist Dashboard
+                    </h1>
+</div>
+<button class="bg-primary text-on-primary px-11 py-4 font-label text-sm uppercase tracking-widest hover:bg-primary-container transition-all duration-300">
+                    Refresh Scenarios
+                </button>
+</div>
+</header>
+<!-- Scenario Columns Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Column 1: The Bold Exit -->
+<section class="flex flex-col gap-8 bg-surface-container-low p-8 border-t-2 border-primary">
+<div class="space-y-2">
+<span class="font-label text-[10px] uppercase tracking-[0.2em] text-primary font-bold">Scenario Alpha</span>
+<h2 class="font-headline text-3xl italic tracking-tight text-on-surface">The Bold Exit</h2>
+</div>
+<!-- Joy Canvas Card (Screen 3 Reference) -->
+<div class="relative group aspect-[4/5] overflow-hidden bg-surface-container-highest">
+<img class="object-cover w-full h-full grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="Cinematic wide shot of a lone sailboat on a crystal clear turquoise ocean at noon with vibrant sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCf8JFN7zu9hvvzabK_j4ba1RgfNAE3u5kurWv0SbzvDShvXY3TgwSOdxHO1pGP1qxKrM1a12klYNwyHb_oe8Ijl6VjNdJbCeS70g-NTidYtHA_ID_6WQYEtX-gWJjhmDQg3JXeZ9nWAa_4K2RdeTo1gcOjx_91_x0TxotXyohNH75Zo9w8twLeMZe69_qpuKU1iKqXKpdYLkrqY-1Vyj_EehW3RGneC4AcTVGwtufqa11Em-NgEy9BwNTdWdtelCydrQdi6t2dkoo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6">
+<p class="font-label text-[10px] text-surface-bright/70 uppercase tracking-widest mb-1">Target Milestone</p>
+<h3 class="font-headline text-xl text-surface-bright italic">Oceanic Solitude</h3>
+</div>
+</div>
+<!-- Financial Snapshot -->
+<div class="bg-surface p-6 space-y-4">
+<div class="flex justify-between items-baseline border-b border-outline-variant/20 pb-2">
+<span class="font-label text-xs uppercase tracking-wider text-outline">Freedom Age</span>
+<span class="font-headline text-2xl text-on-surface">52</span>
+</div>
+<div class="flex justify-between items-baseline border-b border-outline-variant/20 pb-2">
+<span class="font-label text-xs uppercase tracking-wider text-outline">Annual Spend</span>
+<span class="font-headline text-2xl text-on-surface">$120k</span>
+</div>
+<div class="flex justify-between items-baseline">
+<span class="font-label text-xs uppercase tracking-wider text-outline">Success Prob.</span>
+<span class="font-headline text-2xl text-primary">84%</span>
+</div>
+</div>
+<!-- Sliders -->
+<div class="space-y-6 mt-auto pt-8 border-t border-outline-variant/10">
+<div class="space-y-3">
+<div class="flex justify-between font-label text-[10px] uppercase tracking-widest">
+<span>Retirement Age</span>
+<span class="text-primary">52</span>
+</div>
+<input class="w-full h-px bg-outline-variant appearance-none cursor-pointer accent-primary" max="75" min="45" type="range" value="52"/>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between font-label text-[10px] uppercase tracking-widest">
+<span>Monthly Spend</span>
+<span class="text-primary">$10,000</span>
+</div>
+<input class="w-full h-px bg-outline-variant appearance-none cursor-pointer accent-primary" max="25000" min="5000" type="range" value="10000"/>
+</div>
+</div>
+</section>
+<!-- Column 2: The Balanced Path -->
+<section class="flex flex-col gap-8 bg-surface-container p-8 border-t-2 border-primary-container">
+<div class="space-y-2">
+<span class="font-label text-[10px] uppercase tracking-[0.2em] text-primary-container font-bold">Scenario Beta</span>
+<h2 class="font-headline text-3xl italic tracking-tight text-on-surface">The Balanced Path</h2>
+</div>
+<!-- Joy Canvas Card -->
+<div class="relative group aspect-[4/5] overflow-hidden bg-surface-container-highest">
+<img class="object-cover w-full h-full grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="Atmospheric mountain range shrouded in morning mist with deep green pine trees and soft diffused light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCp7HoYkOUG3bV1-ARyhKPGJR2yL1UgAoLHinIK1zvehUqypnjAj5rCdvcOu7ghvuDGeBHCfVASDkAXYMKzvX6maeJ4k9Ykh11kAf251DHTHle-2e8jXKf7NXBGFSl7OuzCh8gMeDwekhclTP8M50eFtisrTqON26rR84w93mjhcrEY2X9b5qrN-Di_mzApJqJ-2PVE2hLE02Qab9eNewML8rBhoz2VyrJ7GsAq9i5bIW515scPGThv21JuZxSk_RCgySZ3QxHov5k"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6">
+<p class="font-label text-[10px] text-surface-bright/70 uppercase tracking-widest mb-1">Target Milestone</p>
+<h3 class="font-headline text-xl text-surface-bright italic">Mountain Stewardship</h3>
+</div>
+</div>
+<!-- Financial Snapshot -->
+<div class="bg-surface p-6 space-y-4">
+<div class="flex justify-between items-baseline border-b border-outline-variant/20 pb-2">
+<span class="font-label text-xs uppercase tracking-wider text-outline">Freedom Age</span>
+<span class="font-headline text-2xl text-on-surface">60</span>
+</div>
+<div class="flex justify-between items-baseline border-b border-outline-variant/20 pb-2">
+<span class="font-label text-xs uppercase tracking-wider text-outline">Annual Spend</span>
+<span class="font-headline text-2xl text-on-surface">$180k</span>
+</div>
+<div class="flex justify-between items-baseline">
+<span class="font-label text-xs uppercase tracking-wider text-outline">Success Prob.</span>
+<span class="font-headline text-2xl text-primary">96%</span>
+</div>
+</div>
+<!-- Sliders -->
+<div class="space-y-6 mt-auto pt-8 border-t border-outline-variant/10">
+<div class="space-y-3">
+<div class="flex justify-between font-label text-[10px] uppercase tracking-widest">
+<span>Retirement Age</span>
+<span class="text-primary-container">60</span>
+</div>
+<input class="w-full h-px bg-outline-variant appearance-none cursor-pointer accent-primary-container" max="75" min="45" type="range" value="60"/>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between font-label text-[10px] uppercase tracking-widest">
+<span>Monthly Spend</span>
+<span class="text-primary-container">$15,000</span>
+</div>
+<input class="w-full h-px bg-outline-variant appearance-none cursor-pointer accent-primary-container" max="25000" min="5000" type="range" value="15000"/>
+</div>
+</div>
+</section>
+<!-- Column 3: The Legacy Chapter -->
+<section class="flex flex-col gap-8 bg-surface-container-high p-8 border-t-2 border-outline">
+<div class="space-y-2">
+<span class="font-label text-[10px] uppercase tracking-[0.2em] text-outline font-bold">Scenario Gamma</span>
+<h2 class="font-headline text-3xl italic tracking-tight text-on-surface">The Legacy Chapter</h2>
+</div>
+<!-- Joy Canvas Card -->
+<div class="relative group aspect-[4/5] overflow-hidden bg-surface-container-highest">
+<img class="object-cover w-full h-full grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="Interior of an elegant dark-wood library with floor to ceiling shelves and golden afternoon light through a window" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_67sxbcG1h4-7MgJ15pgf49SGx3oQdcReczh-4CJe-1133QetBbU3MG0EVWOPY1-_AmqiSwCBHIjQuYsUvcrE8RW_JlcFH88YCGkoyXt8s8F1bgzQkHxwwn4mJOq9N62gTtRx4vOMRbqMTnTjbF6Mi9dCgKjo2CpkiSkV9BQ5VKYs9RG0MJ8B-anXBJ5WjfWpXxGiT6m4YAdYo8GW5AQmAIi4v_SqQAbig1WpgfIikn5Ryx-ltcZoY_sF6KI3VQNgsS2QBv55-Kc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6">
+<p class="font-label text-[10px] text-surface-bright/70 uppercase tracking-widest mb-1">Target Milestone</p>
+<h3 class="font-headline text-xl text-surface-bright italic">Private Foundation</h3>
+</div>
+</div>
+<!-- Financial Snapshot -->
+<div class="bg-surface p-6 space-y-4">
+<div class="flex justify-between items-baseline border-b border-outline-variant/20 pb-2">
+<span class="font-label text-xs uppercase tracking-wider text-outline">Freedom Age</span>
+<span class="font-headline text-2xl text-on-surface">67</span>
+</div>
+<div class="flex justify-between items-baseline border-b border-outline-variant/20 pb-2">
+<span class="font-label text-xs uppercase tracking-wider text-outline">Annual Spend</span>
+<span class="font-headline text-2xl text-on-surface">$300k</span>
+</div>
+<div class="flex justify-between items-baseline">
+<span class="font-label text-xs uppercase tracking-wider text-outline">Success Prob.</span>
+<span class="font-headline text-2xl text-primary">99%</span>
+</div>
+</div>
+<!-- Sliders -->
+<div class="space-y-6 mt-auto pt-8 border-t border-outline-variant/10">
+<div class="space-y-3">
+<div class="flex justify-between font-label text-[10px] uppercase tracking-widest">
+<span>Retirement Age</span>
+<span class="text-on-surface">67</span>
+</div>
+<input class="w-full h-px bg-outline-variant appearance-none cursor-pointer accent-on-surface" max="75" min="45" type="range" value="67"/>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between font-label text-[10px] uppercase tracking-widest">
+<span>Monthly Spend</span>
+<span class="text-on-surface">$25,000</span>
+</div>
+<input class="w-full h-px bg-outline-variant appearance-none cursor-pointer accent-on-surface" max="40000" min="5000" type="range" value="25000"/>
+</div>
+</div>
+</section>
+</div>
+<!-- Footnote / Methodology -->
+<footer class="mt-20 border-t border-outline-variant/20 pt-10">
+<div class="flex flex-col md:flex-row gap-8 justify-between">
+<div class="max-w-md">
+<p class="font-label text-[10px] uppercase tracking-widest text-outline mb-4">Methodology</p>
+<p class="text-xs text-on-surface/60 leading-relaxed font-light">
+                        Projections are based on historical Monte Carlo simulations using a 3.2% inflation-adjusted withdrawal rate. These archival entries are intended for directive planning and do not constitute financial advice.
+                    </p>
+</div>
+<div class="flex gap-12">
+<div>
+<p class="font-label text-[10px] uppercase tracking-widest text-outline mb-4">Status</p>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-xs font-medium">Live Ledger Sync</span>
+</div>
+</div>
+<div>
+<p class="font-label text-[10px] uppercase tracking-widest text-outline mb-4">Edition</p>
+<span class="text-xs font-medium">2024.01</span>
+</div>
+</div>
+</div>
+</footer>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden bg-[#fbf9f4]/80 dark:bg-[#1b1c19]/80 backdrop-blur-xl fixed bottom-0 left-0 w-full flex justify-around items-center px-12 py-8 z-50">
+<a class="text-[#1b1c19]/30 dark:text-[#fbf9f4]/30 flex flex-col items-center" href="#">
+<span class="material-symbols-outlined mb-1">event_note</span>
+<span class="font-manrope text-[9px] uppercase tracking-widest">Timeline</span>
+</a>
+<a class="text-[#775a19] dark:text-[#c5a059] flex flex-col items-center scale-105" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+<span class="font-manrope text-[9px] uppercase tracking-widest">Journal</span>
+</a>
+<a class="text-[#1b1c19]/30 dark:text-[#fbf9f4]/30 flex flex-col items-center" href="#">
+<span class="material-symbols-outlined mb-1">format_list_bulleted</span>
+<span class="font-manrope text-[9px] uppercase tracking-widest">Index</span>
+</a>
+</nav>
+</body></html>

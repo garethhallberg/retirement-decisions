@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,300;0,400;0,700;1,400&amp;family=Manrope:wght@200;300;400;500;600;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-highest": "#e4e2dd",
+              "tertiary-container": "#8fa5d6",
+              "on-error": "#ffffff",
+              "primary-fixed-dim": "#e9c176",
+              "surface-tint": "#775a19",
+              "secondary-container": "#e2dfde",
+              "on-secondary-fixed-variant": "#474746",
+              "surface-container-lowest": "#ffffff",
+              "surface-container": "#f0eee9",
+              "on-secondary-fixed": "#1c1b1b",
+              "secondary": "#5f5e5e",
+              "on-tertiary-fixed": "#001a41",
+              "on-primary-container": "#4e3700",
+              "secondary-fixed-dim": "#c8c6c5",
+              "primary-container": "#c5a059",
+              "on-secondary": "#ffffff",
+              "on-tertiary-fixed-variant": "#304671",
+              "surface-container-high": "#eae8e3",
+              "error-container": "#ffdad6",
+              "tertiary": "#485e8b",
+              "surface": "#fbf9f4",
+              "outline": "#7f7667",
+              "on-primary-fixed": "#261900",
+              "on-tertiary-container": "#233a65",
+              "on-primary": "#ffffff",
+              "primary-fixed": "#ffdea5",
+              "inverse-surface": "#30312e",
+              "on-secondary-container": "#636262",
+              "on-error-container": "#93000a",
+              "inverse-on-surface": "#f2f1ec",
+              "tertiary-fixed-dim": "#b0c6f9",
+              "error": "#ba1a1a",
+              "on-tertiary": "#ffffff",
+              "surface-container-low": "#f5f3ee",
+              "surface-dim": "#dbdad5",
+              "inverse-primary": "#e9c176",
+              "surface-variant": "#e4e2dd",
+              "on-surface": "#1b1c19",
+              "secondary-fixed": "#e5e2e1",
+              "background": "#fbf9f4",
+              "on-surface-variant": "#4e4639",
+              "on-background": "#1b1c19",
+              "outline-variant": "#d1c5b4",
+              "tertiary-fixed": "#d8e2ff",
+              "on-primary-fixed-variant": "#5d4201",
+              "surface-bright": "#fbf9f4",
+              "primary": "#775a19"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .archival-gradient {
+            background: linear-gradient(135deg, rgba(119, 90, 25, 0.05) 0%, rgba(197, 160, 89, 0.05) 100%);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container/30">
+<!-- TopNavBar Execution -->
+<nav class="flex justify-between items-center w-full px-12 py-6 max-w-full mx-auto bg-[#fbf9f4] transition-colors duration-300 fixed top-0 z-50">
+<div class="text-2xl font-headline tracking-tighter text-[#1b1c19]">The Archivist</div>
+<div class="hidden md:flex space-x-12 font-headline font-light tracking-wide">
+<a class="text-[#1b1c19]/60 hover:text-[#775a19] transition-all duration-500" href="#">Heritage Index</a>
+<a class="text-[#1b1c19]/60 hover:text-[#775a19] transition-all duration-500" href="#">Directives</a>
+<a class="text-[#775a19] border-b border-[#775a19] pb-1 transition-all duration-500" href="#">Vault</a>
+</div>
+<div class="flex items-center space-x-6 text-[#775a19]">
+<button class="hover:opacity-70 transition-opacity duration-300">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<button class="hover:opacity-70 transition-opacity duration-300">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</nav>
+<!-- SideNavBar Execution -->
+<aside class="fixed left-0 top-0 h-full w-64 bg-[#f5f3ee] flex flex-col py-10 pt-28 hidden lg:flex">
+<div class="px-8 mb-10">
+<h3 class="font-label uppercase tracking-[0.15em] text-[10px] text-[#775a19] mb-1">Pillar Management</h3>
+<p class="font-headline italic text-xs text-on-surface/40">Curated Sections</p>
+</div>
+<nav class="flex-grow">
+<a class="flex items-center space-x-4 text-[#1b1c19]/40 py-4 px-8 hover:bg-[#e4e2dd]/50 transition-colors duration-500" href="#">
+<span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
+<span class="font-label uppercase tracking-[0.15em] text-[10px]">Timeline</span>
+</a>
+<a class="flex items-center space-x-4 bg-[#e4e2dd] text-[#1b1c19] py-4 px-8 transition-colors duration-500" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance">account_balance</span>
+<span class="font-label uppercase tracking-[0.15em] text-[10px]">Assets</span>
+</a>
+<a class="flex items-center space-x-4 text-[#1b1c19]/40 py-4 px-8 hover:bg-[#e4e2dd]/50 transition-colors duration-500" href="#">
+<span class="material-symbols-outlined" data-icon="gavel">gavel</span>
+<span class="font-label uppercase tracking-[0.15em] text-[10px]">Legal</span>
+</a>
+<a class="flex items-center space-x-4 text-[#1b1c19]/40 py-4 px-8 hover:bg-[#e4e2dd]/50 transition-colors duration-500" href="#">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="font-label uppercase tracking-[0.15em] text-[10px]">Legacy</span>
+</a>
+</nav>
+<div class="px-8 mt-auto">
+<button class="w-full bg-primary text-on-primary font-label uppercase tracking-[0.2em] text-[10px] py-4 hover:bg-primary-container transition-colors duration-300">
+                Archive Entry
+            </button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="lg:ml-64 pt-32 px-8 md:px-24 pb-20">
+<!-- Hero Section -->
+<header class="max-w-4xl mb-24">
+<span class="font-label uppercase tracking-[0.3em] text-[11px] text-primary block mb-6">Chapter III: Family Narrative</span>
+<h1 class="font-headline text-5xl md:text-7xl font-light leading-tight text-on-surface mb-8">
+                These are the threads of your story. <span class="italic text-primary-container">How shall they be woven?</span>
+</h1>
+<div class="h-[1px] w-24 bg-outline-variant/30"></div>
+</header>
+<!-- Mood Board / Canvas Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
+<!-- Card 1: The Values (Text-heavy asymmetric) -->
+<div class="md:col-span-5 bg-surface-container-low p-10 relative group border-none">
+<div class="absolute top-10 right-10">
+<span class="material-symbols-outlined text-primary/40 text-4xl" data-icon="verified">verified</span>
+</div>
+<h2 class="font-headline text-2xl mb-8 border-b border-primary/10 pb-4">The Values</h2>
+<div class="space-y-6 font-body text-on-surface/70 leading-relaxed text-lg">
+<p>Integrity over expediency. The quiet strength of endurance. We believe that a name is only as heavy as the promises kept behind it.</p>
+<p class="italic">"To build for the century, not the season."</p>
+</div>
+<div class="mt-12 flex justify-between items-end">
+<button class="font-label uppercase tracking-[0.2em] text-[9px] text-primary flex items-center group-hover:gap-2 transition-all duration-300">
+                        Edit Narrative <span class="material-symbols-outlined text-xs ml-2" data-icon="edit">edit</span>
+</button>
+<span class="font-label text-[10px] text-on-surface/20">Ref. 001-V</span>
+</div>
+</div>
+<!-- Card 2: The Stories (Vintage Photo focus) -->
+<div class="md:col-span-7 md:mt-24">
+<div class="bg-surface-container-highest p-4 pb-12 transition-all duration-500 hover:translate-y-[-4px]">
+<div class="aspect-[4/3] w-full overflow-hidden mb-8">
+<img alt="Vintage family portrait" class="w-full h-full object-cover grayscale opacity-80 mix-blend-multiply" data-alt="Grained black and white vintage photograph of a large family gathering on a sun-drenched porch with soft cinematic film texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAu7p5H5F91jPXWccxu43MPBmcfq8UG9CMlHbjh2nNAbBhKT5dA59EToPvfwPSlOUujAEzqwc4apX5vBaMwgK287yKeqFKB3EalOGwWPMZ2xU7dMFSL_oVsxrYpjuPGH0uRnMzrzmQSoWdVY-95dIBHcSneYfNE01-Z_TmnkKA6bf4O6O9Q8JIJzE3Lu5HSLMoMY3AoRbo1oXU8T3paTkc1cm3jGUGu6c3yn0sX9ny_TxE3tVVbrIBYrnLA1Gk09doCh7sQM5WJDIM"/>
+</div>
+<div class="px-6">
+<div class="flex justify-between items-start mb-6">
+<h2 class="font-headline text-2xl">The Stories</h2>
+<span class="material-symbols-outlined text-on-surface/30" data-icon="auto_stories">auto_stories</span>
+</div>
+<p class="font-body text-on-surface/60 leading-relaxed mb-8 max-w-lg">
+                            The crossing of the Atlantic in 1922. The small bakery on 4th Street that survived the winter of '47. The laughter that echoed in the summer house before the storm.
+                        </p>
+<button class="bg-primary px-8 py-3 text-on-primary font-label uppercase tracking-[0.2em] text-[10px] hover:bg-primary-container transition-colors">
+                            Expand Archive
+                        </button>
+</div>
+</div>
+</div>
+<!-- Card 3: The Possessions (Sketch/Object focus) -->
+<div class="md:col-span-6 lg:col-span-4 md:-mt-32">
+<div class="bg-surface-container p-10 border-none relative overflow-hidden group">
+<div class="absolute -right-10 -bottom-10 opacity-5 group-hover:scale-110 transition-transform duration-700">
+<span class="material-symbols-outlined text-[200px]" data-icon="pocket_watch">watch</span>
+</div>
+<div class="mb-8">
+<span class="material-symbols-outlined text-primary-container text-3xl mb-4" data-icon="brush">brush</span>
+<h2 class="font-headline text-2xl">The Possessions</h2>
+</div>
+<div class="border border-outline-variant/10 p-4 mb-8">
+<div class="aspect-square bg-white/50 flex items-center justify-center p-8">
+<img alt="Antique pocket watch" class="max-w-full max-h-full object-contain mix-blend-multiply opacity-70" data-alt="Detailed line art sketch of an ornate antique gold pocket watch on parchment paper background with charcoal strokes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDf2JZ_DCk5fXahEbX059oOL83gN5067UAxTJcvXfzEjcLDOaaYhiix2kFtzuVBoSv_IzdzuT6lY_I0_qSVO8j0OegloABI83DSwOirSXr1BuwMfXTixj0GdSLavEqTUbta6izTP8zm7kUsufmWevf_-sa1fLzwnmKlqHOtjzH0Q7DNKsIOHCbiLIoXimR7EaVniqLhAMSa78YuHqeXBYGyRcvMnPw0IA3D2Lsc3zpiE2TrhPz3H1TqBmL0aovId-sHiWooCNgqnSQ"/>
+</div>
+</div>
+<p class="font-label uppercase tracking-[0.1em] text-[10px] text-on-surface/40 mb-2">Item 042: The Grandfather's Chronometer</p>
+<p class="font-body text-sm text-on-surface/70 leading-relaxed mb-8">
+                        A weight of gold and memory. Handed down through four generations, it marks time not in seconds, but in stewardship.
+                    </p>
+<button class="flex items-center space-x-2 font-label text-[10px] uppercase tracking-widest text-primary border-b border-primary/20 pb-1 hover:border-primary transition-all">
+<span>Catalog Heirloom</span>
+<span class="material-symbols-outlined text-xs" data-icon="arrow_right_alt">arrow_right_alt</span>
+</button>
+</div>
+</div>
+<!-- Descriptive Text Block (Editorial Asymmetry) -->
+<div class="md:col-span-6 lg:col-span-6 lg:col-start-7 p-10 md:p-20">
+<div class="max-w-sm">
+<h3 class="font-headline italic text-2xl mb-6 text-primary-container">"Legacy is not what is left behind, but what is brought forward."</h3>
+<p class="font-body text-on-surface/50 leading-relaxed mb-8">
+                        Your archive is a living entity. Every entry, every sketch, and every whispered memory forms the bedrock of what comes next. Use this canvas to curate the essentials of your family's identity.
+                    </p>
+<div class="flex space-x-4">
+<div class="w-12 h-[1px] bg-primary mt-3"></div>
+<span class="font-label uppercase tracking-widest text-[9px] text-on-surface/40">The Curator's Note</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Button - Only for Mobile or Focus Screens -->
+<div class="fixed bottom-8 right-8 lg:hidden">
+<button class="bg-primary text-on-primary w-14 h-14 flex items-center justify-center shadow-2xl">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</div>
+</body></html>

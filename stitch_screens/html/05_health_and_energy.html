@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Health &amp; Energy | The Archivist</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;family=Noto+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "inverse-primary": "#e9c176",
+            "on-surface": "#1b1c19",
+            "surface-variant": "#e4e2dd",
+            "secondary-fixed": "#e5e2e1",
+            "background": "#fbf9f4",
+            "on-background": "#1b1c19",
+            "on-surface-variant": "#4e4639",
+            "outline-variant": "#d1c5b4",
+            "on-primary-fixed-variant": "#5d4201",
+            "tertiary-fixed": "#d8e2ff",
+            "surface-bright": "#fbf9f4",
+            "primary": "#775a19",
+            "primary-fixed": "#ffdea5",
+            "inverse-surface": "#30312e",
+            "on-error-container": "#93000a",
+            "on-secondary-container": "#636262",
+            "inverse-on-surface": "#f2f1ec",
+            "tertiary-fixed-dim": "#b0c6f9",
+            "error": "#ba1a1a",
+            "on-tertiary": "#ffffff",
+            "surface-container-low": "#f5f3ee",
+            "surface-dim": "#dbdad5",
+            "on-primary-container": "#4e3700",
+            "on-secondary": "#ffffff",
+            "primary-container": "#c5a059",
+            "secondary-fixed-dim": "#c8c6c5",
+            "on-tertiary-fixed-variant": "#304671",
+            "surface-container-high": "#eae8e3",
+            "error-container": "#ffdad6",
+            "tertiary": "#485e8b",
+            "outline": "#7f7667",
+            "surface": "#fbf9f4",
+            "on-primary-fixed": "#261900",
+            "on-primary": "#ffffff",
+            "on-tertiary-container": "#233a65",
+            "surface-container-highest": "#e4e2dd",
+            "tertiary-container": "#8fa5d6",
+            "on-error": "#ffffff",
+            "primary-fixed-dim": "#e9c176",
+            "surface-tint": "#775a19",
+            "secondary-container": "#e2dfde",
+            "on-secondary-fixed-variant": "#474746",
+            "surface-container": "#f0eee9",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary-fixed": "#1c1b1b",
+            "secondary": "#5f5e5e",
+            "on-tertiary-fixed": "#001a41"
+          },
+          fontFamily: {
+            "headline": ["Noto Serif"],
+            "body": ["Manrope"],
+            "label": ["Manrope"],
+            "noto-serif": ["Noto Serif"],
+            "manrope": ["Manrope"]
+          },
+          borderRadius: {"DEFAULT": "0rem", "lg": "0rem", "xl": "0rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+    }
+    body {
+      background-color: #fbf9f4;
+      color: #1b1c19;
+    }
+    /* Editorial Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #fbf9f4; }
+    ::-webkit-scrollbar-thumb { background: #d1c5b4; }
+  </style>
+</head>
+<body class="font-body selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
+<!-- TopNavBar (Shared Component) -->
+<nav class="bg-[#fbf9f4] dark:bg-[#1b1c19] flex justify-between items-center w-full px-10 py-6 max-w-none fixed top-0 z-50">
+<div class="font-noto-serif text-2xl tracking-tighter text-[#1b1c19] dark:text-[#fbf9f4]">
+      The Archivist
+    </div>
+<div class="hidden md:flex space-x-12">
+<a class="font-noto-serif font-light tracking-tight text-lg text-[#1b1c19]/60 dark:text-[#fbf9f4]/60 hover:text-[#775a19] transition-colors duration-300" href="#">Heritage</a>
+<a class="font-noto-serif font-light tracking-tight text-lg text-[#775a19] dark:text-[#c5a059] font-medium transition-colors duration-300" href="#">Directives</a>
+<a class="font-noto-serif font-light tracking-tight text-lg text-[#1b1c19]/60 dark:text-[#fbf9f4]/60 hover:text-[#775a19] transition-colors duration-300" href="#">Legacy</a>
+</div>
+<button class="text-[#775a19] dark:text-[#c5a059]">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</nav>
+<main class="min-h-screen pt-32 pb-24 px-6 md:px-24 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+<!-- Left Column: Imagery (Asymmetric Layout) -->
+<div class="lg:col-span-5 relative">
+<div class="aspect-[4/5] bg-surface-container-highest overflow-hidden relative shadow-2xl">
+<img alt="Vibrant late life energy" class="w-full h-full object-cover" data-alt="vibrant older woman laughing while cycling through a sun-drenched coastal path, high contrast editorial photography, warm golden hour lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkwrsRcWuN6cc9iATx7xUQq-_OOdj2Xe5vGDkJ1L1wKVimqUpMPlbpp79yGbYxUuvlUqrnn8-K_cXkiELV9WjCBFYMJSMvjYrNltw96YAkkXKYqL4AI8qra-EPiGojHSxvGsJns40nYB4iBSrs7ePROJJyQTYAbxeVG3nc1xkKM6puYul7ZaHvBiRg2ZrxmNevl3GV2yIMIJsaTdEJSjvv_nsovi0a5UcjE2DhKrO_qvohu0BU1mBsKirQrYExEri8pWcwAxrvl00"/>
+<!-- Floating Label (Monograph Detail) -->
+<div class="absolute bottom-8 -right-4 bg-white px-8 py-4 shadow-xl border-l-4 border-primary">
+<span class="block font-label text-[10px] tracking-[0.3em] uppercase text-on-surface-variant mb-1">Status</span>
+<span class="font-headline text-xl italic text-primary">Vitality Peak</span>
+</div>
+</div>
+<!-- Decorative element -->
+<div class="absolute -top-10 -left-10 w-32 h-32 border-t border-l border-outline-variant opacity-30 hidden md:block"></div>
+</div>
+<!-- Right Column: Content & Options -->
+<div class="lg:col-span-7 space-y-12">
+<header class="space-y-6">
+<div class="inline-block px-4 py-1 border border-outline-variant">
+<span class="font-label text-[10px] uppercase tracking-[0.25em] text-primary">Chapter IV: Vitality</span>
+</div>
+<h1 class="font-headline text-5xl md:text-7xl leading-tight tracking-tight text-on-surface">
+          How physical do you want <span class="italic">this life</span> to be?
+        </h1>
+<p class="font-body text-lg text-secondary leading-relaxed max-w-xl">
+          Define the cadence of your daily movements. Your health directive ensures your monograph reflects the energy you intend to manifest.
+        </p>
+</header>
+<!-- Evocative Path Options -->
+<div class="space-y-4">
+<!-- Option 1: Highly Active -->
+<button class="group w-full text-left p-8 bg-surface-container-low hover:bg-surface-container-highest transition-all duration-500 flex items-center justify-between">
+<div class="space-y-2">
+<span class="font-label text-[10px] uppercase tracking-[0.2em] text-on-surface-variant group-hover:text-primary transition-colors">The Explorer</span>
+<h3 class="font-headline text-2xl text-on-surface">Highly Active: Hiking, cycling, and travel.</h3>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-transform group-hover:translate-x-2" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<!-- Option 2: Moderately Active -->
+<button class="group w-full text-left p-8 bg-surface-container-low hover:bg-surface-container-highest transition-all duration-500 flex items-center justify-between border-l-4 border-primary">
+<div class="space-y-2">
+<span class="font-label text-[10px] uppercase tracking-[0.2em] text-primary">The Harmonist</span>
+<h3 class="font-headline text-2xl text-on-surface">Moderately Active: Golf, gardening, and long walks.</h3>
+</div>
+<span class="material-symbols-outlined text-primary transition-transform group-hover:translate-x-2" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</button>
+<!-- Option 3: Relaxed -->
+<button class="group w-full text-left p-8 bg-surface-container-low hover:bg-surface-container-highest transition-all duration-500 flex items-center justify-between">
+<div class="space-y-2">
+<span class="font-label text-[10px] uppercase tracking-[0.2em] text-on-surface-variant group-hover:text-primary transition-colors">The Observer</span>
+<h3 class="font-headline text-2xl text-on-surface">Relaxed: Cooking, reading, and culture.</h3>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-transform group-hover:translate-x-2" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- Action Footer -->
+<div class="pt-8 flex flex-col sm:flex-row items-center gap-8">
+<button class="w-full sm:w-auto px-12 py-5 bg-primary text-on-primary font-label text-xs uppercase tracking-[0.3em] hover:bg-primary-container transition-all duration-500 shadow-lg">
+          Commit to Archive
+        </button>
+<button class="font-label text-xs uppercase tracking-[0.2em] text-secondary hover:text-primary transition-colors border-b border-transparent hover:border-primary pb-1">
+          Review Previous Chapter
+        </button>
+</div>
+</div>
+</main>
+<!-- SideNavBar (Shared Component - Hidden on Mobile) -->
+<aside class="hidden xl:flex fixed left-0 top-0 h-full w-24 flex-col items-center py-12 bg-[#f5f3ee] dark:bg-[#121210] z-40">
+<div class="font-noto-serif text-xl italic text-[#1b1c19] dark:text-[#fbf9f4] -rotate-90 mb-24 whitespace-nowrap">
+      Edition 2024
+    </div>
+<div class="flex flex-col gap-12 flex-grow">
+<div class="group flex flex-col items-center gap-2 cursor-pointer text-[#1b1c19]/40 dark:text-[#fbf9f4]/40">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="font-manrope uppercase tracking-[0.2em] text-[8px]">Heritage</span>
+</div>
+<div class="group flex flex-col items-center gap-2 cursor-pointer text-[#775a19] dark:text-[#c5a059] font-semibold tracking-widest">
+<span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
+<span class="font-manrope uppercase tracking-[0.2em] text-[8px]">Directives</span>
+</div>
+<div class="group flex flex-col items-center gap-2 cursor-pointer text-[#1b1c19]/40 dark:text-[#fbf9f4]/40">
+<span class="material-symbols-outlined" data-icon="tempest">storm</span>
+<span class="font-manrope uppercase tracking-[0.2em] text-[8px]">Legacy</span>
+</div>
+<div class="group flex flex-col items-center gap-2 cursor-pointer text-[#1b1c19]/40 dark:text-[#fbf9f4]/40">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-manrope uppercase tracking-[0.2em] text-[8px]">Vault</span>
+</div>
+</div>
+</aside>
+<!-- BottomNavBar (Shared Component - Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-6 py-4 bg-[#fbf9f4]/80 dark:bg-[#1b1c19]/80 backdrop-blur-xl z-50 shadow-[0_-4px_40px_rgba(27,28,25,0.04)]">
+<div class="text-[#1b1c19]/30 dark:text-[#fbf9f4]/30 flex flex-col items-center">
+<span class="material-symbols-outlined" data-icon="event_note">event_note</span>
+<span class="font-manrope text-[8px] uppercase tracking-widest mt-1">Timeline</span>
+</div>
+<div class="text-[#775a19] dark:text-[#c5a059] flex flex-col items-center scale-105">
+<span class="material-symbols-outlined" data-icon="menu_book" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+<span class="font-manrope text-[8px] uppercase tracking-widest mt-1">Journal</span>
+</div>
+<div class="text-[#1b1c19]/30 dark:text-[#fbf9f4]/30 flex flex-col items-center">
+<span class="material-symbols-outlined" data-icon="format_list_bulleted">format_list_bulleted</span>
+<span class="font-manrope text-[8px] uppercase tracking-widest mt-1">Index</span>
+</div>
+</nav>
+<!-- Background Decorative Text -->
+<div class="fixed top-1/2 -right-48 -translate-y-1/2 opacity-[0.03] pointer-events-none select-none hidden 2xl:block">
+<span class="font-headline text-[24rem] leading-none text-on-surface italic">Vitality</span>
+</div>
+</body></html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400&amp;family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "inverse-primary": "#e9c176",
+              "on-surface": "#1b1c19",
+              "surface-variant": "#e4e2dd",
+              "secondary-fixed": "#e5e2e1",
+              "background": "#fbf9f4",
+              "on-background": "#1b1c19",
+              "on-surface-variant": "#4e4639",
+              "outline-variant": "#d1c5b4",
+              "on-primary-fixed-variant": "#5d4201",
+              "tertiary-fixed": "#d8e2ff",
+              "surface-bright": "#fbf9f4",
+              "primary": "#775a19",
+              "primary-fixed": "#ffdea5",
+              "inverse-surface": "#30312e",
+              "on-error-container": "#93000a",
+              "on-secondary-container": "#636262",
+              "inverse-on-surface": "#f2f1ec",
+              "tertiary-fixed-dim": "#b0c6f9",
+              "error": "#ba1a1a",
+              "on-tertiary": "#ffffff",
+              "surface-container-low": "#f5f3ee",
+              "surface-dim": "#dbdad5",
+              "on-primary-container": "#4e3700",
+              "on-secondary": "#ffffff",
+              "primary-container": "#c5a059",
+              "secondary-fixed-dim": "#c8c6c5",
+              "on-tertiary-fixed-variant": "#304671",
+              "surface-container-high": "#eae8e3",
+              "error-container": "#ffdad6",
+              "tertiary": "#485e8b",
+              "outline": "#7f7667",
+              "surface": "#fbf9f4",
+              "on-primary-fixed": "#261900",
+              "on-primary": "#ffffff",
+              "on-tertiary-container": "#233a65",
+              "surface-container-highest": "#e4e2dd",
+              "tertiary-container": "#8fa5d6",
+              "on-error": "#ffffff",
+              "primary-fixed-dim": "#e9c176",
+              "surface-tint": "#775a19",
+              "secondary-container": "#e2dfde",
+              "on-secondary-fixed-variant": "#474746",
+              "surface-container": "#f0eee9",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary-fixed": "#1c1b1b",
+              "secondary": "#5f5e5e",
+              "on-tertiary-fixed": "#001a41"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      }
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar: Execution of Shared Component JSON -->
+<header class="fixed top-0 left-0 w-full z-50 bg-[#fbf9f4] dark:bg-[#1b1c19] flex justify-between items-center px-10 py-6">
+<div class="font-noto-serif text-2xl tracking-tighter text-[#1b1c19] dark:text-[#fbf9f4]">
+            The Archivist
+        </div>
+<nav class="hidden md:flex gap-12 items-center">
+<a class="font-noto-serif font-light tracking-tight text-lg text-[#1b1c19]/60 dark:text-[#fbf9f4]/60 hover:text-[#775a19] transition-colors duration-300" href="#">Heritage</a>
+<a class="font-noto-serif font-light tracking-tight text-lg text-[#1b1c19]/60 dark:text-[#fbf9f4]/60 hover:text-[#775a19] transition-colors duration-300" href="#">Directives</a>
+<a class="font-noto-serif font-light tracking-tight text-lg text-[#1b1c19]/60 dark:text-[#fbf9f4]/60 hover:text-[#775a19] transition-colors duration-300" href="#">Legacy</a>
+<a class="font-noto-serif font-light tracking-tight text-lg text-[#775a19] dark:text-[#c5a059] font-medium" href="#">Vault</a>
+</nav>
+<div class="flex items-center">
+<button class="material-symbols-outlined text-[#775a19] dark:text-[#c5a059] text-2xl">menu</button>
+</div>
+</header>
+<!-- Main Content: The Canvas Moment -->
+<main class="pt-32 pb-40 px-6 md:px-24 max-w-7xl mx-auto min-h-screen">
+<!-- Header Section: High-Contrast Pairing -->
+<header class="mb-20 text-center md:text-left">
+<span class="font-label text-[10px] uppercase tracking-[0.4em] text-outline mb-4 block">Visual Monograph / No. 003</span>
+<h1 class="font-headline text-5xl md:text-7xl font-light text-on-surface tracking-tight leading-tight">
+                The Canvas <span class="italic">Moment</span>
+</h1>
+<p class="mt-8 text-secondary max-w-xl text-lg leading-relaxed font-light">
+                A distillation of your aspirations, curated into a living directive. These are the pillars of your next chapter.
+            </p>
+</header>
+<!-- The Archival Grid: Asymmetric Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+<!-- Card 1: Portugal (Dominant) -->
+<div class="md:col-span-8 group">
+<div class="bg-surface-container-low overflow-hidden transition-all duration-500 hover:bg-surface-container-high">
+<div class="aspect-[16/9] overflow-hidden">
+<img alt="Golf Portugal" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90" data-alt="Sun-drenched lush green golf course in Algarve Portugal at sunset with long shadows and coastal horizon in soft golden light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQT1jvzWakyN2ZtMW7o2JHPVcavZa5BEhmU2D1F7jP4sONMtbmbTk6PIGSVBL5USNEK9jP4IOhH31j57F4cO4DnuijO-Ij8IN9lrUIpbueE275qDeAT5oG0suylcHllyzIaKF8BmTzHSAm8j8FJYYGt7oUCJnp3RoMztYljk3VRHMjs2dkdH6s6nbrftbllQj1KJmJCqIgyAnOndM9QojqvHImIXjRtbh9jYSzwJkzy0MZzIwxvJlFgk1suBuFBNIUnYtCaiIBSbI"/>
+</div>
+<div class="p-10 md:p-14">
+<h2 class="font-headline text-3xl mb-6 text-on-surface">Golf in Portugal.</h2>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<p class="font-body text-xl text-secondary max-w-md leading-relaxed">
+                                Five rounds a week. That course in the Algarve. Pursuing the perfect swing under the Atlantic sun.
+                            </p>
+<span class="font-label text-[10px] tracking-[0.2em] text-primary uppercase">Activity / Routine</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2: Italy (Secondary) -->
+<div class="md:col-span-4 mt-0 md:mt-24 group">
+<div class="bg-surface-container-low overflow-hidden transition-all duration-500 hover:bg-surface-container-high">
+<div class="aspect-[4/5] overflow-hidden">
+<img alt="Italian Kitchen" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90" data-alt="Rustic Tuscan kitchen with weathered stone walls warm morning light hitting a wooden table with fresh flour and herbs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIqamvnIgHN6frJWJhYtcTRw9da7ZAT-oPLhxaJBbQhj7ZlD6DJAuoo-uz6-ec7mZj9KrE60ZLyBXRBJzs0YRbGFiYibUIieo7_VG1WeT_l75k54EkUmCrYeEIuLqnDQRMRbpeNL0gEkiqke97ro5eDknL8uGA_beXW-SZM_bFxOBmffRh6xyMCSHgAyM4IlRcxDCC5Bi7pk-sbMTnxAXy4AR2kFevacyEoQxZCF7sPKImlbbp0Q3tgqalEGWABr2Mzxq-1ausimg"/>
+</div>
+<div class="p-8">
+<h2 class="font-headline text-2xl mb-4 text-on-surface">A month in Italy.</h2>
+<p class="font-body text-base text-secondary leading-relaxed mb-6">
+                            Real cooking. No agenda. Sourcing ingredients from the local market and mastering the art of the slow meal.
+                        </p>
+<span class="font-label text-[10px] tracking-[0.2em] text-primary uppercase">Travel / Cultural</span>
+</div>
+</div>
+</div>
+<!-- Card 3: Music Studio (Asymmetric Offset) -->
+<div class="md:col-span-5 md:col-start-2 group">
+<div class="bg-surface-container-low overflow-hidden transition-all duration-500 hover:bg-surface-container-high">
+<div class="aspect-square overflow-hidden">
+<img alt="Music Studio" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90" data-alt="Modern minimalist music studio with clean wooden panels professional monitors and soft ambient warm lighting in a quiet evening setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcKMU9KhNtLm4-kwES4BJuDeOLd63itiiJBTUUUMDWRFrChKfz-8SZhi9dhFUb-fRdVM1IHih4JDc5fW5Hc48Nug3vClcsDyf_VNYltVkstr9baTawA6S94QdlYRaMk3oO4wFDep27laMHxkxEGZKlQzeR2s1oR8mssEtkpKqKvQp-jTJKbcaTCI-6EcKRWAF2PNQkjvzhBjnqTzvt7FNLSLL4sX-A2vM1lq3xwfSQ-OcjCFYBdg1HYfX07PA9xV6CLPmLW3awXC4"/>
+</div>
+<div class="p-10">
+<h2 class="font-headline text-2xl mb-4 text-on-surface">Music.</h2>
+<p class="font-body text-base text-secondary leading-relaxed mb-6">
+                            The studio finally finished. A dedicated space for sound, creation, and the quiet pursuit of melody.
+                        </p>
+<span class="font-label text-[10px] tracking-[0.2em] text-primary uppercase">Creative / Legacy</span>
+</div>
+</div>
+</div>
+<!-- Placeholder / Add More -->
+<div class="md:col-span-4 md:col-start-8 mt-8 group cursor-pointer">
+<div class="aspect-square bg-surface-container flex flex-col items-center justify-center p-12 transition-all duration-500 hover:bg-surface-container-highest">
+<span class="material-symbols-outlined text-4xl text-outline mb-6">add_circle</span>
+<p class="font-label text-[10px] tracking-[0.3em] text-outline uppercase text-center">Append to Monograph</p>
+</div>
+</div>
+</div>
+<!-- Prompt Section: "Does this feel right?" -->
+<section class="mt-32 border-t border-outline-variant/15 pt-20 pb-10 text-center">
+<h3 class="font-headline text-3xl text-on-surface mb-8">Does this feel right? Anything missing?</h3>
+<div class="flex flex-wrap justify-center gap-6">
+<button class="bg-primary text-on-primary px-11 py-4 font-label text-xs tracking-[0.2em] uppercase transition-all duration-300 hover:bg-primary-container hover:text-on-primary-container">
+                    Archive &amp; Proceed
+                </button>
+<button class="bg-transparent text-primary px-11 py-4 border border-outline-variant/15 font-label text-xs tracking-[0.2em] uppercase transition-all duration-300 hover:bg-surface-container-low">
+                    Refine Details
+                </button>
+</div>
+</section>
+</main>
+<!-- BottomNavBar: Execution of Shared Component JSON -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-12 py-8 bg-[#fbf9f4]/80 dark:bg-[#1b1c19]/80 backdrop-blur-xl z-50 shadow-[0_-4px_40px_rgba(27,28,25,0.04)]">
+<div class="text-[#1b1c19]/30 dark:text-[#fbf9f4]/30 flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-2xl">event_note</span>
+<span class="font-manrope text-[9px] uppercase tracking-widest">Timeline</span>
+</div>
+<div class="text-[#1b1c19]/30 dark:text-[#fbf9f4]/30 flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-2xl">menu_book</span>
+<span class="font-manrope text-[9px] uppercase tracking-widest">Journal</span>
+</div>
+<div class="text-[#775a19] dark:text-[#c5a059] flex flex-col items-center scale-105 gap-1">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">format_list_bulleted</span>
+<span class="font-manrope text-[9px] uppercase tracking-widest">Index</span>
+</div>
+</nav>
+<!-- SideNavBar (Hidden on Mobile, Visible on Desktop if using that shell) -->
+<!-- Note: TopNavBar is used here for the 'Editorial' feel, SideNav excluded per 'Linear/Focused Task' logic in instructions -->
+</body></html>

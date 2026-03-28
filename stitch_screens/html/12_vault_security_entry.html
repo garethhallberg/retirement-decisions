@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Vault Security Entry | The Archivist</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@300;400;700&amp;family=Manrope:wght@300;400;500;600;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary-fixed-dim": "#e9c176",
+            "inverse-on-surface": "#f2f1ec",
+            "primary-container": "#c5a059",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-fixed": "#001a41",
+            "on-tertiary": "#ffffff",
+            "primary-fixed": "#ffdea5",
+            "on-secondary-fixed-variant": "#474746",
+            "secondary-container": "#e2dfde",
+            "on-surface": "#1b1c19",
+            "on-error": "#ffffff",
+            "primary": "#775a19",
+            "error-container": "#ffdad6",
+            "tertiary": "#485e8b",
+            "tertiary-fixed": "#d8e2ff",
+            "surface-tint": "#775a19",
+            "surface-container-high": "#eae8e3",
+            "on-secondary-container": "#636262",
+            "on-primary-fixed-variant": "#5d4201",
+            "on-error-container": "#93000a",
+            "on-primary-fixed": "#261900",
+            "on-tertiary-fixed-variant": "#304671",
+            "surface-dim": "#dbdad5",
+            "outline": "#7f7667",
+            "surface": "#fbf9f4",
+            "secondary-fixed-dim": "#c8c6c5",
+            "outline-variant": "#d1c5b4",
+            "on-background": "#1b1c19",
+            "surface-container": "#f0eee9",
+            "on-primary-container": "#4e3700",
+            "tertiary-fixed-dim": "#b0c6f9",
+            "surface-container-highest": "#e4e2dd",
+            "on-tertiary-container": "#233a65",
+            "on-secondary": "#ffffff",
+            "surface-container-low": "#f5f3ee",
+            "on-secondary-fixed": "#1c1b1b",
+            "inverse-primary": "#e9c176",
+            "background": "#fbf9f4",
+            "on-surface-variant": "#4e4639",
+            "secondary-fixed": "#e5e2e1",
+            "secondary": "#5f5e5e",
+            "surface-variant": "#e4e2dd",
+            "inverse-surface": "#30312e",
+            "surface-bright": "#fbf9f4",
+            "error": "#ba1a1a",
+            "on-primary": "#ffffff",
+            "tertiary-container": "#8fa5d6"
+          },
+          fontFamily: {
+            "headline": ["Noto Serif", "serif"],
+            "body": ["Manrope", "sans-serif"],
+            "label": ["Manrope", "sans-serif"]
+          },
+          borderRadius: {"DEFAULT": "0rem", "lg": "0rem", "xl": "0rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24
+    }
+.unhurried {
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1)
+    }
+.archival-grain {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCe__qndOCwac0BpI7wAcUcCvqr2VDl_CUF4VSooIZ_BQzZgfVknNBaN3X4JN2YOG35DCOdiPxqQYJie9daCFvGOYQterb-6HP6jFICjSeqEGEAt0hWoll1N0myk4qqHGlxBaSMw_MVRt0UiYR55jnesSsJgUyOl9DCXkdG4sCV7x50x2ceXUMGxYZufZLT49yTs4EWmtCCcKwYTh4ShoxDBBhmaCujG9Ba7GOauMO97XQOX2uZ1Tz9GvAmMNt9kl_xmvjtSedX_54)
+    }
+.brass-gradient {
+    background: linear-gradient(135deg, #775a19 0%, #c5a059 50%, #775a19 100%)
+    }</style>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary-fixed-dim selection:text-on-primary-fixed overflow-hidden">
+<!-- Side Navigation -->
+<aside class="fixed h-screen w-72 left-0 top-0 bg-[#f5f3ee] dark:bg-[#1b1c19] flex flex-col py-10 px-6 space-y-8 z-40">
+<div class="space-y-1">
+<h1 class="font-serif text-xl tracking-widest uppercase text-[#1b1c19] dark:text-[#fbf9f4]">The Archivist</h1>
+<p class="font-serif text-xs tracking-wider text-[#1b1c19]/50 dark:text-[#fbf9f4]/50">Later Life Planning Studio</p>
+</div>
+<nav class="flex-1 flex flex-col space-y-2">
+<div class="flex items-center px-4 py-3 space-x-4 text-[#1b1c19]/70 hover:bg-[#e4e2dd]/50 transition-all duration-300 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="folder_open">folder_open</span>
+<span class="font-serif tracking-normal">Archive</span>
+</div>
+<div class="flex items-center px-4 py-3 space-x-4 text-[#1b1c19]/70 hover:bg-[#e4e2dd]/50 transition-all duration-300 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
+<span class="font-serif tracking-normal">Directives</span>
+</div>
+<div class="flex items-center px-4 py-3 space-x-4 bg-[#e4e2dd] text-[#775a19] font-medium transition-all duration-300 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="account_balance" style="font-variation-settings: 'FILL' 1;">account_balance</span>
+<span class="font-serif tracking-normal">Legacy Vault</span>
+</div>
+<div class="flex items-center px-4 py-3 space-x-4 text-[#1b1c19]/70 hover:bg-[#e4e2dd]/50 transition-all duration-300 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="key">key</span>
+<span class="font-serif tracking-normal">Security</span>
+</div>
+</nav>
+<div class="pt-6 border-t border-outline-variant/10 space-y-2">
+<div class="flex items-center px-4 py-2 space-x-4 text-[#1b1c19]/70 hover:bg-[#e4e2dd]/50 transition-all duration-300 cursor-pointer text-sm">
+<span class="material-symbols-outlined text-base" data-icon="help_outline">help_outline</span>
+<span class="font-serif">Help</span>
+</div>
+<div class="flex items-center px-4 py-2 space-x-4 text-[#1b1c19]/70 hover:bg-[#e4e2dd]/50 transition-all duration-300 cursor-pointer text-sm">
+<span class="material-symbols-outlined text-base" data-icon="logout">logout</span>
+<span class="font-serif">Sign Out</span>
+</div>
+</div>
+</aside>
+<!-- Top Navigation -->
+<header class="fixed top-0 right-0 left-72 bg-[#fbf9f4] dark:bg-[#1b1c19] flex justify-between items-center px-12 py-6 z-30">
+<div class="flex space-x-12 items-center">
+<a class="font-serif text-sm tracking-wide uppercase text-[#1b1c19]/60 hover:text-[#775a19] transition-colors duration-300" href="#">Heritage Index</a>
+<a class="font-serif text-sm tracking-wide uppercase text-[#1b1c19]/60 hover:text-[#775a19] transition-colors duration-300" href="#">Directives</a>
+<a class="font-serif text-sm tracking-wide uppercase text-[#775a19] font-semibold transition-colors duration-300" href="#">Vault</a>
+</div>
+<div class="flex items-center space-x-6">
+<button class="material-symbols-outlined text-[#1b1c19]/60 hover:text-[#775a19] transition-colors duration-300" data-icon="settings">settings</button>
+<button class="material-symbols-outlined text-[#1b1c19]/60 hover:text-[#775a19] transition-colors duration-300" data-icon="account_circle">account_circle</button>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="ml-72 pt-24 min-h-screen flex items-center justify-center p-12 bg-surface archival-grain">
+<!-- Security Container -->
+<div class="max-w-md w-full flex flex-col items-center text-center space-y-12">
+<!-- The "Archival Folder" Lock Logic -->
+<div class="relative group">
+<!-- Folder Texture Visual -->
+<div class="absolute -inset-8 bg-surface-container-highest opacity-40 blur-2xl group-hover:opacity-60 transition-opacity duration-700"></div>
+<div class="relative w-72 h-96 bg-[#e4e2dd] shadow-2xl flex flex-col items-center justify-center border-l-[12px] border-primary/20">
+<!-- The Brass Lock -->
+<div class="w-24 h-24 brass-gradient rounded-full flex items-center justify-center shadow-lg border-2 border-primary-container mb-8">
+<span class="material-symbols-outlined text-on-primary text-5xl" data-icon="fingerprint" style="font-variation-settings: 'FILL' 0; font-weight: 200;">fingerprint</span>
+</div>
+<!-- Stylized Keypad -->
+<div class="grid grid-cols-3 gap-6 opacity-80">
+<div class="w-8 h-8 rounded-full border border-primary/30 flex items-center justify-center cursor-pointer hover:bg-primary/10 transition-colors"></div>
+<div class="w-8 h-8 rounded-full border border-primary/30 flex items-center justify-center cursor-pointer hover:bg-primary/10 transition-colors"></div>
+<div class="w-8 h-8 rounded-full border border-primary/30 flex items-center justify-center cursor-pointer hover:bg-primary/10 transition-colors"></div>
+<div class="w-8 h-8 rounded-full border border-primary/30 flex items-center justify-center cursor-pointer hover:bg-primary/10 transition-colors"></div>
+<div class="w-8 h-8 rounded-full border border-primary/30 flex items-center justify-center cursor-pointer hover:bg-primary/10 transition-colors"></div>
+<div class="w-8 h-8 rounded-full border border-primary/30 flex items-center justify-center cursor-pointer hover:bg-primary/10 transition-colors"></div>
+<div class="w-8 h-8 rounded-full border border-primary/30 flex items-center justify-center cursor-pointer hover:bg-primary/10 transition-colors"></div>
+<div class="w-8 h-8 rounded-full border border-primary/30 flex items-center justify-center cursor-pointer hover:bg-primary/10 transition-colors"></div>
+<div class="w-8 h-8 rounded-full border border-primary/30 flex items-center justify-center cursor-pointer hover:bg-primary/10 transition-colors"></div>
+</div>
+<!-- Bottom Flap Detail -->
+<div class="absolute bottom-0 w-full h-1 bg-primary/20"></div>
+<div class="absolute bottom-8 right-6 text-[10px] uppercase tracking-[0.3em] font-label text-on-surface/30 transform rotate-90 origin-right">Serial No. 884-VAULT</div>
+</div>
+</div>
+<!-- Verification Text -->
+<div class="space-y-4">
+<p class="font-serif text-sm tracking-[0.2em] uppercase text-on-surface/60">Verification required for the Legacy Vault.</p>
+<div class="w-12 h-[1px] bg-primary/40 mx-auto"></div>
+</div>
+<!-- Subtle Prompt -->
+<button class="group flex items-center space-x-3 text-primary hover:text-primary-container transition-colors duration-500">
+<span class="font-label text-xs tracking-widest uppercase">Place thumb to scan</span>
+<span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform duration-500" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</main>
+<!-- Decorative Border/Texture Element -->
+<div class="fixed inset-0 pointer-events-none border-[32px] border-surface-container-low/50 z-50 mix-blend-multiply"></div>
+</body></html>
