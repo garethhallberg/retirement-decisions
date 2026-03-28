@@ -1,1 +1,8 @@
 .claude/
+node_modules/
+.env
+*.db
+*.db-shm
+*.db-wal
+.next/
+dist/

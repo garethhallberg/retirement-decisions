@@ -1,0 +1,85 @@
+import type { Config } from 'tailwindcss'
+
+const config: Config = {
+  darkMode: 'class',
+  content: [
+    './src/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
+  theme: {
+    extend: {
+      colors: {
+        'inverse-primary': '#e9c176',
+        'on-surface': '#1b1c19',
+        'surface-variant': '#e4e2dd',
+        'secondary-fixed': '#e5e2e1',
+        'background': '#fbf9f4',
+        'on-background': '#1b1c19',
+        'on-surface-variant': '#4e4639',
+        'outline-variant': '#d1c5b4',
+        'on-primary-fixed-variant': '#5d4201',
+        'tertiary-fixed': '#d8e2ff',
+        'surface-bright': '#fbf9f4',
+        'primary': '#775a19',
+        'primary-fixed': '#ffdea5',
+        'inverse-surface': '#30312e',
+        'on-error-container': '#93000a',
+        'on-secondary-container': '#636262',
+        'inverse-on-surface': '#f2f1ec',
+        'tertiary-fixed-dim': '#b0c6f9',
+        'error': '#ba1a1a',
+        'on-tertiary': '#ffffff',
+        'surface-container-low': '#f5f3ee',
+        'surface-dim': '#dbdad5',
+        'on-primary-container': '#4e3700',
+        'on-secondary': '#ffffff',
+        'primary-container': '#c5a059',
+        'secondary-fixed-dim': '#c8c6c5',
+        'on-tertiary-fixed-variant': '#304671',
+        'surface-container-high': '#eae8e3',
+        'error-container': '#ffdad6',
+        'tertiary': '#485e8b',
+        'outline': '#7f7667',
+        'surface': '#fbf9f4',
+        'on-primary-fixed': '#261900',
+        'on-primary': '#ffffff',
+        'on-tertiary-container': '#233a65',
+        'surface-container-highest': '#e4e2dd',
+        'tertiary-container': '#8fa5d6',
+        'on-error': '#ffffff',
+        'primary-fixed-dim': '#e9c176',
+        'surface-tint': '#775a19',
+        'secondary-container': '#e2dfde',
+        'on-secondary-fixed-variant': '#474746',
+        'surface-container': '#f0eee9',
+        'surface-container-lowest': '#ffffff',
+        'on-secondary-fixed': '#1c1b1b',
+        'secondary': '#5f5e5e',
+        'on-tertiary-fixed': '#001a41',
+      },
+      fontFamily: {
+        headline: ['var(--font-noto-serif)', 'serif'],
+        body: ['var(--font-manrope)', 'sans-serif'],
+        label: ['var(--font-manrope)', 'sans-serif'],
+      },
+      borderRadius: {
+        DEFAULT: '0.25rem',
+        lg: '0.5rem',
+        xl: '0.75rem',
+      },
+      keyframes: {
+        blink: {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0' },
+        },
+      },
+      animation: {
+        blink: 'blink 1.2s step-end infinite',
+      },
+    },
+  },
+  plugins: [
+    require('@tailwindcss/forms'),
+  ],
+}
+
+export default config
